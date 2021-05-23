@@ -1,0 +1,491 @@
+%------------------------------------
+% Template based on the version by:
+% Dario Taraborelli
+% URL: http://nitens.org/taraborelli/cvtex
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
+
+
+\documentclass[11pt, a4paper]{article}
+\usepackage[spanish,french,english]{babel}
+%\babelhyphenation[french][in-for-ma-tion]
+\usepackage{fontspec} 
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{color, colortbl}
+\usepackage{enumitem}
+\usepackage{xurl}
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{a4paper, textwidth=5.5in, textheight=9.1in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+
+% FONTS
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+\setromanfont [Ligatures={Common}, BoldFont={Gentium Basic Bold}, ItalicFont={Gentium Basic Italic}]{Gentium Basic}
+%\setmonofont[Scale=0.8]{Monaco} 
+% ---- CUSTOM AMPERSAND
+\newcommand{\amper}{{\fontspec[Scale=.95]{Gentium Basic Italic}\selectfont\itshape\&}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+\newcommand{\ind}[1]{\textcolor{black!62!white}{\selectfont#1}}
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\rmfamily\mdseries\upshape\Large}
+\subsectionfont{\rmfamily\bfseries\upshape\normalsize} 
+\subsubsectionfont{\rmfamily\mdseries\upshape\normalsize} 
+
+%BREAKING DOIs
+
+\usepackage{expl3}
+\ExplSyntaxOn
+\newcommand \breakDOI[1]
+ {
+  \tl_map_inline:nn { #1 } { \href{http://dx.doi.org/#1}{##1} \penalty0 \scan_stop: }
+ }
+\ExplSyntaxOff
+
+
+% PDF SETUP
+
+
+\makeatletter
+\renewcommand\@seccntformat[1]{}
+\makeatother
+
+\usepackage[dvipdfm, bookmarksopen=true, bookmarks=true, colorlinks, breaklinks=true, pdftitle={Helena Bermúdez Sabel - vita},pdfauthor={Helena Bermúdez Sabel}]{hyperref}  
+\hypersetup{linkcolor=blue!70!black,citecolor=blue!70!black,filecolor=black,urlcolor=blue!70!black} 
+
+
+
+\usepackage[open,openlevel=2]{bookmark}
+
+% DOCUMENT
+\begin{document}
+{\LARGE Helena Bermúdez Sabel}\\[1cm]
+Institut des sciences du langage\\
+Université de Neuchâtel\\Pierre-à-Mazel 7\\2000 Neuchâtel \\ Switzerland\\[.2cm]
+%Phone: \texttt{+41 021 692 47 02}\\[.2cm]
+email: \href{mailto:helena.bermudez@unine.ch}{helena.bermudez@unine.ch}\\
+ORCID: \href{https://orcid.org/0000-0002-8627-1367}{0000-0002-8627-1367}\\
+Institutional repository: \href{https://libra.unine.ch/Personnes/Personne/Helena\_Bermudez\_Sabel}{Libra -- UniNe} 
+
+
+
+% \section{Profile}
+% \begin{itemize}[noitemsep]
+%  \item Researcher with eight years of experience in different projects at the intersection of the Humanities and Information Technologies.
+%  \item Academic background in Philology and Medieval Studies with a strong foundation in Romance Linguistics and Latin.
+%  \item Strong programming skills. See Github profile at \href{https://github.com/helenasabel}{https://github.com/helenasabel} and sections “\hyperref[websites]{Digital Humanities Web Applications}” and “\hyperref[tutorials]{Digital Humanities Tutorials}” below.
+%  \item Expertise in digital editing and the creation of interfaces for philological textual analysis.
+%  \item Participation in international and interdisciplinary teams; elected member of the Text Encoding Initiative's Technical Council (TEI-C).
+%  \item Active involvement in dissemination and training activities related to Digital Humanities.
+% \item Experience in group management and coordination of  research activities.
+% \item Day-to-day involvement in collaborative works through which I have developed good interpersonal and teamwork skills.
+% \end{itemize}
+
+
+%%\hrule
+\section{Current position}
+Postdoctoral researcher (\emph{Chercheuse FNS senior}), Institut des sciences du langage, Université de Neuchâtel.
+% \textcolor{black!62!white}{
+% \begin{itemize}[noitemsep,topsep=0pt]
+%  \item Design, development and implementation of all computer programs for project \textit{A world of possibilities. Modal pathways over an extra-long period of time: the diachrony of modality in the Latin language}.
+% \item Frontend and backend development.
+% \item Server maintenance (Linux)
+% \item Responsible for data retrieval, data administration and data processing for linguistic analysis.
+% \item Formalisation of annotation schemas.
+% \item Linguistic annotation in Latin (both automatic and manual annotation)
+% \end{itemize}}
+
+
+%%\hrule
+\section{Areas of specialization}
+Romance and Latin Linguistics. Textual criticism. Corpus linguistics. Digital Humanities.
+
+%%\hrule
+\section{Appointments held}
+\noindent
+\years{2019--2020}Postdoctoral researcher, Université de Lausanne, Lausanne (Switzerland)\\
+% \ind{Same activities as in current position (the project continues in Neuchâtel).}\\
+\years{2017--2019}Researcher, Universidad Nacional de Educación a Distancia, Madrid (Spain)
+% \textcolor{black!62!white}{
+% \begin{itemize}[noitemsep,topsep=0pt]
+%  \item Development of a semantic model for European Poetry in the Semantic Web ecosystem. For this task, I analysed numerous online resources which contained poetry information related to European traditions (including Classical and Late Latin).
+%  \item Assistance as a domain expert in both Linguistics and Literature in the development of Natural Language Processing (NLP) tools. 
+%  \item Consultant for research projects dealing with the publication of digital editions and/or textual databases.
+%  \end{itemize}
+%  }
+\years{2012--2016}Research Assistant, grant-assisted graduate student, Universidade de Santiago de Compostela (Spain)
+% \textcolor{black!62!white}{
+% \begin{itemize}[noitemsep,topsep=0pt]
+%  \item Undergraduate teaching (mostly focused on technological resources for the study of Medieval Language and Literature).
+%  \item Development of individual research projects based on the application of computational methods for the study of Galician-Portuguese language and literature.
+%  \end{itemize}
+%  }
+ 
+%\hrule
+\section{Education}
+\noindent
+\years{2019}PhD in Medieval Studies, Universidade de Santiago de Compostela\\
+\ind{\textbf{Thesis title:} \textit{As Humanidades Digitais e a sua aplicação à variação linguística na lírica galego-portuguesa} (Linguistic variation in Galician-Portuguese lyric: Digital Humanities approaches).}\\
+%Supervisors: Pilar Lorenzo Gradín \amper{} Mariña Arbor Aldea\\
+%Jury: Mercedes Brea, José Manuel Lucía Megías, Elena Pierazzo}\\
+\years{2013}BA in Portuguese Philology, Universidade de Santiago de Compostela\\
+\years{2012}MA in European Medieval Studies: Images, Texts and
+Contexts, Universidade de Santiago de Compostela\\
+\years{2011}BA in Romance Philology, Universidade de Santiago de Compostela
+
+%\hrule
+\subsection{Specialised and professional training}
+\years{2019}\textit{Journée de Initiation à la lemmatisation des textes médievaux}, IRHT-CNRS (Paris, France).\\
+\years{2019}\textit{LiLa Workshop: Linguistic Resources \amper{} NLP Tools for Latin}, LiLa Project (Milan, Italy).\\
+\years{2017}\textit{Datathon on Linguistic Linked Open Data} (SD-LLOD-17),
+Ontology Engineering Group, Universidad Politécnica de Madrid (Cercedilla, Spain).\\
+\years{2016}\textit{Diploma en docencia universitaria}, Universidade de Santiago de Compostela.\\
+\years{2015}\textit{Computer-supported collation with CollateX}, Alliance of Digital Humanities Organizations  (Sydney, Australia).\\
+\years{2014}\textit{Computational Methods in the Humanities}, University of Pittsburgh (Pittsburgh, USA).
+\\
+\years{2014}\textit{Taking TEI further: transforming and publishing TEI}, Women Writers Project – Northeastern University (Boston, USA).
+
+\years{2013}\textit{GRADSchool: competence training course}, CRAC – Vitae,  Fundación Barrié de la Maza (Spain).
+
+\years{2013}\textit{Digital Humanities: Aproaches and Applications}, Humanidades Digitales Hispánicas (Spain).
+
+\years{2013}\textit{Traning School in Codicology}, Medioevo Europeo — Medieval Cultures and Technological Resources (Berlin, Germany)
+
+% \subsection{Languages skills}
+% \begin{itemize}[noitemsep]
+%  \item Galician (first language)
+%  \item Spanish (first language)
+%  \item English: C2
+%  \item Portuguese: C2
+%  \item French: B1
+%  \item Other languages: Occitan, Catalan, Italian, Modern Greek
+% \end{itemize}
+% 
+% 
+% \subsection{Computer skills}
+% \begin{itemize}[noitemsep]
+%  \item XML technologies: XML, XML-TEI, XPath, XSLT, XQuery, Schematron, RELAX NG, KML, SVG
+%  \item Web technologies: HTML, RDFa, CSS, JavaScript, PHP
+%  \item Other: Turtle (Terse RDF Triple Language), Web Ontology Language (OWL), LaTeX
+%  \item Software: oXygen XML Editor, eXist DB, Cytoscape, Google Earth, Inkscape 
+% \end{itemize}
+
+
+\section{Publications \& talks}
+
+\subsection{Editorial work}
+\noindent
+\years{2019}González-Blanco, E. \amper{} \underline{H. Bermúdez Sabel}, \textit{Revista de Poética Medieval}, 33, “Los repertorios poéticos digitales: del Medievo a la interoperabilidad”. ISSN: 1137-8905.\\
+%\ind{Indexed in ERIH PLUS}
+\years{2019}Plecháč, P., Scherr, B., Skulacheva, T., \underline{Bermúdez-Sabel, H.} \amper{} R. Kolár (eds.), \textit{Quantitative approaches to versification}, Prague: Institute of Czech Literature of the Czech Academy of Sciences, ISBN 978-80-88069-83-6.\\
+%\ind{Indexed in Web of Science}
+\years{2018}González, D. \amper{} \underline{H. Bermúdez Sabel} (eds.), \textit{Humanidades Digitales. Miradas hacia la Edad Media}. Berlin: De Gruyter, \breakDOI{doi:10.1515/9783110585421}.\\
+%\ind{(Indexed in JSTOR, Google Scholar, Semantic Scholar)}\\
+%       Reviews: \\
+%         \begin{itemize}
+%            \item García-Fernández, Miguel (2019): “Déborah González y Helena Bermúdez Sabel (eds.), Humanidades digitales. Miradas hacia la Edad Media, Berlin; Boston, De Gruyter, 2019, 1.a edición, 259 pp., ISBN 978-3-11-058541-4, e-ISBN (PDF) 978-3-11-058542-1, e-ISBN (EPUB) 978-3-11-058555-1”, \textit{Cuadernos Medievales}, 26: 101–4.}
+          %\end{itemize}
+
+\subsection{Journal articles}
+\noindent
+\years{2021}Álvarez-Mellado, E., Díez, M.L., Ruiz-Fabo, P.,  \underline{Bermúdez, H.},
+Ros, S.  \amper{} E. González-Blanco. “TEI-friendly annotation scheme for medieval named entities:
+a case on a Spanish medieval corpus”. \textit{Language Resources \amper{} Evaluation} (2021). \breakDOI{doi:10.1007/s10579-020-09516-2}.\\
+\years{2020}Ruiz Fabo, P., \underline{Bermúdez Sabel, H.}, Martínez Cantón, C. \amper{} E. González-Blanco, “The Diachronic Spanish Sonnet Corpus: TEI and linked open data encoding, data distribution, and metrical findings”,
+\textit{Digital Scholarship in the Humanities}. ISNN: 1477-4615. \href{https://academic.oup.com/dsh/advance-article-abstract/doi/10.1093/llc/fqaa035/5902019?redirectedFrom=fulltext}{doi:10.1093/ll\\c/fqaa035}\\
+%\ind{Indexed in Scopus, Social Sciences Citation Index®, Computer Science Index}
+\years{2019}\underline{Bermúdez Sabel, H}. “Encoding of Variant Taxonomies in TEI”, \textit{Journal of the Text Encoding Initiative}, no. Issue 11 (June). \breakDOI{doi:10.4000/jtei.2676}.
+%\ind{Indexed in Semantic Scholar, Google Scholar, ROAD. Directory of Open Access Resources}
+
+\years{2019}Ruiz Fabo, P. \amper{} \underline{H. Bermúdez Sabel}, “Navegación de corpus a través de anotaciones lingüísticas automáticas obtenidas por Procesamiento del Lenguaje Natural: de anecdótico a ecdótico”, \textit{Revista de Humanidades Digitales}. ISSN: 2531-1786. 4: 136–161. \breakDOI{doi:10.5944/rhd.vol.4.2019.25186}.
+%\ind{(Indexed in ERIH PLUS, Google Scholar, Semantic Scholar, Worldcat)}\\
+
+\years{2018}Triplette, S., Beshero-Bondar, E. \amper{} \underline{H. Bermúdez Sabel}, “A Digital Humanities Approach to Cultural Translation in Robert Southey’s Amadis of Gaul”, \textit{Journal of Translation Studies}. ISSN: 1027-7978. 2(1): 35–58.\\
+%\ind{(Indexed in EBSCOhost)}\\
+\years{2017}\underline{Bermúdez Sabel, H.}, “Colación asistida por ordenador: estado de la cuestión y retos”, \textit{Revista de Humanidades Digitales}. ISSN: 2531-1786. 1: 20-34. \breakDOI{doi:10.5944/rhd.vol.1.2017.16678} \\
+%\ind{(Indexed in ERIH PLUS, Google Scholar, Semantic Scholar, Worldcat)}\\
+
+\subsection{Book chapters}
+\noindent
+\years{2018}\underline{Bermúdez Sabel, H}, “Anotación multicamada externa e o enriquecemento de edicións dixitais”, \textit{in} González, D. \amper{} H. Bermúdez Sabel (eds.), \textit{Humanidades Digitales. Miradas hacia la Edad Media}. Berlin: De Gruyter, 4-17, \href{https://doi.org/10.1515/9783110585421-002}{doi:10.1515/9783110585421-002}.\\
+%\ind{(Indexed in JSTOR, WorldCat, Google Scholar, Semantic Scholar)}\\
+\years{2018}Fernández Guiadanes, A. \amper{} \underline{H. Bermúdez Sabel}, “Da transcrición paleográfica ás bases de datos: Problemas e solucións na lírica galego-portuguesa”, \textit{in} González, D. \amper{} H. Bermúdez Sabel (eds.), \textit{Humanidades Digitales. Miradas hacia la Edad Media}. Berlin: De Gruyter, 34-48,  \breakDOI{doi:10.1515/9783110585421-005}.\\
+%\ind{(Indexed in JSTOR, WorldCat, Google Scholar, Semantic Scholar)}\\
+\years{2016}\underline{Bermúdez Sabel, H.}, “Variación gráfica na lírica profana galego-portuguesa: \textit{T} vs \textit{B,V}”, \textit{in} Corral Díaz, E. \textit{et al.} (eds.), \textit{Cantares de amigos. Estudos en homenaxe a Mercedes Brea}. Universidade de Santiago de Compostela, ISBN 978-84-16533-69-5, 109-115.\\
+%\ind{(Indexed in Dialnet, Semantic Scholar)}\\
+\years{2015}\underline{Bermúdez Sabel, H.}, “A edición sinóptica e a súa aplicación ao estudo da variación lingüística na lírica galego-portuguesa”, \textit{in} Castro, O. \amper{} M. García Liñeira (eds.), \textit{Trama e urda: Contribucións multidisciplinares desde os estudos galegos}. Santiago de Compostela: Consello da Cultura Galega–Asociación Internacional de Estudos Galegos, 99-115, \breakDOI{doi:10.17075/tucmeg.2015.006}. \\
+%\ind{(Indexed in Dialnet, SPI)}
+
+\subsection{Conference proceedings}
+\noindent
+\years{2020}Dell’Oro, F., \underline{Bermúdez Sabel, H.} \amper{} P. Marongiu. “Implemented to Be Shared: the WoPoss Annotation of Semantic Modality in a Latin Diachronic Corpus”. \textit{Sharing the Experience: Workflows for the Digital Humanities. Proceedings of the DARIAH-CH Workshop 2019 (Neuchâtel)}.  \breakDOI{doi:10.5281/zenodo.3739439}\\
+\years{2018}Curado Malta, M., \underline{Bermúdez Sabel, H.}, Baptista, A. A. \amper{} E. González-Blanco, “Validation of a metadata application profile domain model”, \textit{Proc. Int’l Conf. on Dublin Core and Metadata Applications 2018}, pp. 65-75. ISNN 1939-1366.
+       \href{http://dcevents.dublincore.org/IntConf/dc-2018/paper/viewFile/555/675}{http://dcevents.dublincore.org/IntConf/dc-2018/paper/viewFile/555/675}\\
+    %\ind{(Indexed in Scopus)}\\
+\years{2018}Tittel, S., \underline{Bermúdez-Sabel, H.} \amper{} C. Chiarchos, “Using RDFa to Link Text and Dictionary Data for Medieval French” \textit{in} McCrae, J. et al. (eds.), \textit{Proceedings of the 6th Workshop on Linked Data in Linguistics (LDL-2016): Towards Linguistic Data Science}. European Language Resources Association (ELRA), Paris, France, Miyazaki, Japan. ISBN 979-10-95546-19-1 \\
+%\ind{(Indexed in Publons)}
+      \href{http://lrec-conf.org/workshops/lrec2018/W23/pdf/10\_W23.pdf}{http://lrec-conf.org/workshops/lrec2018/W23/pdf/10\_W23.pdf}\\
+\years{2017}\underline{Bermúdez-Sabel H.}, Curado Malta M. \amper{} E. Gonzalez-Blanco, “Towards Interoperability in the European Poetry Community: The Standardization of Philological Concepts” \textit{in} Gracia, J. et al. (eds), \textit{Language, Data, and Knowledge. LDK 2017.} Lecture Notes in Computer Science, vol 10318. Springer, Cham, 156-165,  \breakDOI{doi:10.1007/978-3-319-59888-8\_14}\\
+%\ind{(Indexed in Scopus, EI Engineering Index, Google Scholar, DBLP)}\\
+\years{2017}Curado Malta, M., \underline{Bermúdez Sabel, H.} \amper{} E. González-Blanco, 
+“Modelação semântica: o caso de modelação da poesia” \textit{in} Terra, A. \amper{} M. Carvalho (ed.), 
+\textit{Gestores de Informação para o século XXI}. Instituto Politécnico do Porto, Instituto Superior de Contabilidade e Administração do Porto, Porto, ISBN: 978-989-97851-3-7, 32--44.
+
+      
+\subsection{Contributions to conferences}
+\subsubsection*{Refereed conference talks}
+\noindent
+\years{2021}Dell’Oro, F., \underline{Bermúdez Sabel, H.} \amper{} P. Marongiu. “\textit{Pygmalion}, una herramienta digital para elaborar mapas semánticos: algunos casos de uso en el aula | \textit{Pygmalion}, a tool to draw interactive diachronic semantic maps: some use cases for the classroom”. \textit{I Jornada de Lexicografía en el contexto del aprendizaje de lenguas}. Universidad Complutense de Madrid, Madrid (Spain).\\
+\years{2020}Dell’Oro, F. \amper{} \underline{H. Bermúdez Sabel}, “L’étude de la modalité dans un corpus diachronique en latin : théorie de la modalité, annotation linguistique et partage des données”. \textit{11\textsuperscript{e} Journée de Linguistique Suisse}. Université de Fribourg. \\
+\years{2020}Ruiz Fabo, P. \amper{} \underline{H. Bermúdez Sabel}, “Rhyme network analysis in a non-canonical corpus of sonnets in Spanish”, \textit{DH2020}, Ottawa (Canada).\\
+\years{2019}\underline{Bermúdez Sabel, H.}, Martínez Cantón, C. \amper{} P. Ruiz Fabo, “DISCOvering Spanish Sonnets: A close/distant reading experience”, \textit{Plotting Poetry (and Poetics) 3}, Nancy (France).\\
+\years{2019}Díez Platas, M.L., \underline{Bermúdez, H.}, Ros, S., González-Blanco, E., de la Rosa, J., Pérez, A. \amper{} B. Sartini, “Una red de ontologías para la poesía europea”, \textit{IV Congreso Internacional de la Asociación de Humanidades Digitales Hispánicas}, Toledo (Spain).\\
+\years{2019}\underline{Bermúdez Sabel, H.}, Díez Platas, M.L., Ros Muñoz, S. \amper{} E. González-Blanco, “Towards a Common Model for European Poetry: Challenges and Solutions”, \textit{DH2019}, Utrech (Netherlands).\\
+\years{2018}\underline{Bermúdez Sabel, H.}, “Datos abertos conectados e o enriquecemento de córpora lingüísticos”, \textit{XII Congreso Internacional da AIEG}. Madrid (Spain).\\
+\years{2018}Ruiz Fabo, P., \underline{Bermúdez Sabel, H}., Martínez Cantón, C., González-Blanco, E. \amper{} B. Navarro Colorado, “The Diachronic Spanish Sonnet Corpus (DISCO): TEI and Linked Open Data Encoding, Data Distribution and Metrical Findings”, \textit{DH2018: Puentes/Bridges.} Ciudad de México (Mexico). \\
+\years{2018}González-Blanco, E., Ros, S., Ruiz Fabo, P., Díez Platas, M.L., \underline{Bermúdez, H.}, Martínez Cantón, C.I. \amper{} L. Ayciriex, “Poetry and Digital Humanities making interoperability possible in a divided world of digital poetry: POSTDATA project”, \textit{EADH 2018: “Data in Digital Humanities”}, National University of Ireland, Galway (Ireland). \\
+\years{2017}\underline{Bermúdez Sabel, H.}, “Poesía, interoperabilidad y estándares para el tratamiento de datos poéticos”, \textit{Humanidades Digitales Hispánicas. III Congreso Internacional}. Málaga (Spain).\\
+\years{2017}\underline{Bermúdez Sabel, H.}, “Anotación multicapa a distancia e o enriquecemento de edicións dixitais”, \textit{Congreso Internacional Humanidades Dixitais: olladas desde a Idade Media}. Santiago de Compostela (Spain).\\
+\years{2016}\underline{Bermúdez Sabel, H.}, “Tomayto, tomahto? Encoding variant taxonomies in TEI”, \textit{TEI Conference and Members’ meeting 2016}. Viena (Austria).\\
+\years{2015}\underline{Bermúdez Sabel, H.}, “Collatio informatizada e marcação: proposta metodológica para o estudo da variação linguística na lírica galego-portuguesa”, \textit{Congresso de Humanidades Digitais em Portugal}. Lisboa (Portugal).\\
+\years{2015}\underline{Bermúdez Sabel, H.}, “Colación interlineal aplicada al estudio de la variación lingüística en la lírica gallego-portuguesa”, \textit{Humanidades Digitales Hispánicas. II Congreso Internacional.} Madrid (Spain).
+\\
+\years{2015}Pousada Cruz, M. \amper{} \underline{H. Bermúdez Sabel}, “Cartografía literaria de la lírica profana gallego-portuguesa”, \textit{Humanidades Digitales Hispánicas. II Congreso Internacional}. Madrid (Spain).
+
+\years{2015}\underline{Bermúdez Sabel, H.}, “Aproximação à língua dos cancioneiros galego-portugueses. Um estudo sobre a variação linguística”, \textit{XVI Congresso da Asociación Hispánica de Literatura Medieval}. Porto (Portugal). \\
+\years{2015}\underline{Bermúdez Sabel, H.}, “Trovadores de corte em corte. As viagens dos trovadores galego-portugueses”, \textit{Congreso Internacional Viaxeiros: Do Antigo ao Novo Mundo}. Santiago de Compostela (Spain).\\
+\years{2014}\underline{Bermúdez Sabel, H.}, “Linguistic variation and manuscript transmission. A case study using XML/TEI”, \textit{El’Manuscript-14}. Varna (Bulgaria).\\
+\years{2014}\underline{Bermúdez Sabel, H.}, “Edicións filolóxicas dixitais e marcado enriquecido (XML/TEI)”, \textit{Editing for minorities in the digital era}. Santiago de Compostela (Spain).\\
+\years{2013}\underline{Bermúdez Sabel, H.}, “Propuesta de edición digital para el estudio de la variación lingüística en la lírica profana gallego-portuguesa.“ \textit{Tercer Congreso Internacional Tradición e innovación: nuevas perspectivas para la edición y el estudio de documentos antiguos}. Salamanca (Spain).\\
+\years{2012}\underline{Bermúdez Sabel, H.}, “A lírica profana galego-portuguesa: lingua e transmisión manuscrita”, \textit{Encontro da Mocidade Investigadora}. Santiago de Compostela (Spain).\\
+\years{2012}\underline{Bermúdez Sabel, H.}, “A edición sinóptica: unha ferramenta metodolóxica para o estudo da variación lingüística aplicada á lírica profana galego-portuguesa”, \textit{X Congreso Internacional da AIEG}. Cardiff University (United Kingdom). 
+
+\subsubsection*{Posters}
+\noindent
+ \years{2020}Dell’Oro, F., Rimaz, L. \amper{} \underline{H. Bermúdez Sabel}, “Create your own interactive diachronic semantic maps: a flexible and user-friendly open-source tool for historical linguistics”. \textit{11\textsuperscript{e} Journée de Linguistique Suisse}. Université de Fribourg. \\
+\years{2020}\underline{Bermúdez Sabel, H.}, Dell’Oro, F. \amper{} P. Marongiu, “Visualization of semantic shifts: the case of modal markers”, \textit{DH2020}, Ottawa (Canada).\\
+\years{2020}Cayless, H., Scholger, M., \underline{Bermúdez Sabel, H.}, Meneses, L., del Rio Riande, G., Nagasaki, K., “Communicating the TEI Across Linguistic and Cultural Boundaries”, \textit{DH2020}, Ottawa (Canada).\\
+\years{2019}\underline{Bermúdez Sabel, H.}, Martínez Cantón, C.I., Ruiz Fabo, P. \amper{} P. Plecháč, “DISCOver. Una propuesta circular para descubrir la poesía”, \textit{IV Congreso Internacional de la Asociación de Humanidades Digitales Hispánicas}, Toledo (Spain).\\
+\years{2019}Díez Platas, M.L., \underline{Bermúdez Sabel, H.}, Ros Muñoz, S., González-Blanco, E., De La Rosa, J., Pérez Pozo, A. \amper{} L. Ayciriex, “Towards an Ontology for European Poetry”, \textit{DARIAH Annual Event 2019: Humanities Data}, Warsaw (Poland).\\
+\years{2018}González-Blanco, E., Ros, S., Diez Platas, M. L., Ruiz Fabo, P., \underline{Bermúdez Sabel, H}., Ayciriex, L., \amper{} C. Martínez Cantón, “Poetry Lab”, \textit{CLARIN Annual Conference}, Pisa (Italy).\\
+\years{2015}\underline{Bermúdez Sabel, H.}, “Using Feature Structures for the study of Medieval manuscripts”, \textit{DH2015 Global Digital Humanities}. Sydney (Australia). \\
+
+\subsection{Lectures \& workshops}
+\noindent
+\years{2021}Dell’Oro, F., \underline{Bermúdez Sabel, H.}, Marongiu, P. \amper{} L. Rimaz (2021). \textit{Pygmalion, un Outil Lexicographique pour dessiner des Cartes Interactives}. Université de Neuchâtel. Neuchâtel (Switzerland).\\
+\years{2021}\underline{Bermúdez Sabel, H.} (2021). “Comment construire un corpus pour l’analyse en linguistique historique”. Lecture for the MA course Linguistique de corpus (Prof. Corinne Rossari). Université de Neuchâtel. Neuchâtel (Switzerland).\\
+ \years{2020}\underline{Bermúdez Sabel, H.}, “El modelado de fenómenos lingüísticos en TEI: propuestas de etiquetado y de su explotación”, \textit{Annotation et interaction dans les corpus numériques: le fonds épistolaire de CAREXIL-FR}. Université Paris 8 Vincennes Saint-Denis (France).\\
+\years{2020}\underline{Bermúdez Sabel, H.}, Nury, E. \amper{} E. Spadini, “Introduction to automatic collation”, \textit{Programme doctoral en études numériques}, Université de Lausanne, Lausanne (Switzerland).\\
+ \years{2019}Dell’Oro, F., \underline{Bermúdez Sabel, H.} \amper{} P. Marongiu, “WoPoss: a Workflow for the Semantic Annotation of Modality in a Diachronic Corpus”, \textit{Sharing the Experience: Workflows for the Digital Humanities} [Dariah-CH workshop \#2], Neuchâtel (Switzerland).\\
+\years{2019}Rio Riande, G. del, Scholger, M., \underline{Bermúdez Sabel, H.}, Nagasaki, K., Meneses, L. \amper{} H. Cayless, “Communicating the TEI to a Multilingual User Community”, \textit{Scholarly Communication Institute}, Chapel Hill, N.C. (USA).\\
+\years{2019}\underline{Bermúdez Sabel, H.} \amper{} F. Dell’Oro, “Une édition numérique pour explorer un corpus de (retro-)traductions parallèles”, \textit{Humanités numériques et texte littéraire traduit. Editer et analyser des corpus de versions parallèles}, Université Grenoble Alpes, Grenoble (France).\\
+\years{2019}\underline{Bermúdez Sabel, H.}, “Standardization of European Poetry”, \textit{Pozvánja na prednášky a workshop}, Univerzita Konštantína Filosofa v Nitre, Nitra (Slovaquia).\\
+\years{2019}\underline{Bermúdez Sabel, H.} \amper{} C. Martínez Cantón, “DISCO. An Interface to Browse a Spanish Sonnet Corpus”, \textit{Autorské korpusy a jejich vyzužití v literární vĕdĕ} (Authorial corpora and their usefulness in Literary studies), Palacký University Olomouc, Olomouc (Czech Republic).\\
+\years{2019}Rojas, A. \amper{} \underline{H. Bermúdez Sabel}, “Exercices pratiques d’encodage”, \textit{Atelier d’initiation à l’enco-dage XML-TEI et à la fouille de textes en espagnol}, Projet CLEA (EA 4083), Sorbonne Université, Paris (France).\\
+\years{2018}\underline{Bermúdez Sabel, H.}, “Lenguajes de consulta XML para corpus anotados lingüísticamente”, \textit{Aplicaciones y posibilidades del procesamiento del lenguaje natural para la investigación en Humanidades}. Cursos de Verano UNED. Madrid (Spain).\\
+\years{2018}Ruiz Fabo, P. \amper{} \underline{H. Bermúdez Sabel} \textit{POSTDATA: Poetry Standardization and Linked Open Data}. Trinity College Dublin. Dublin (Ireland).\\
+\years{2018}\underline{Bermúdez Sabel, H.}, “La filología y el texto digital”, \textit{VIII Jornadas Digitales “Edición académica: el entorno digital y sus retos”,} Unión de Editoriales Universitarias Españolas. Madrid (Spain).\\
+\years{2018}\underline{Bermúdez Sabel, H.} \amper{} P. Ruiz Fabo, \textit{Linked Open Data: Unchain your corpora}. University of Würzburg. Würzburg (Germany).\\
+\years{2018}\underline{Bermúdez Sabel, H.}, “Towards interoperability in the European poetry community”, \textit{Shaping Data in Digital Humanities}. Centre for Communication and Computing (University of Copenhagen). Copenhagen (Denmark). \\
+\years{2017}\textit{Introduction to programming and mark-up languages}, PhD Training Program for candidates in the Humanities, Universidade de Santiago de Compostela.\\ 
+\years{2017}Curado Malta, M. \amper{} \underline{H. Bermúdez Sabel}, “Un modelo de datos para la poesía en el contexto de los datos enlazados”, Tecnologías semánticas y herramientas lingüísticas para Humanidades Digitales. Cursos de verano UNED. Madrid (Spain).\\
+\years{2017}Curado Malta, M. \amper{} \underline{H. Bermúdez Sabel}, “Building the Domain Model”, \textit{Building a common model for semantic interoperability in the digital poetry ecosystem}. POSTDATA workshop. Madrid (Spain). \\
+\years{2016}Gamallo, P. \amper{} \underline{H. Bermúdez Sabel}, \textit{Introduction to programming and mark-up languages}, PhD Training Program for candidates in the Humanities, Universidade de Santiago de Compostela.\\ 
+\years{2016}\underline{Bermúdez Sabel, H.}, “Tecnologías de marcado específicas para poesía: TEI-XML”, \textit{Tecnologías digitales aplicadas al estudio de la poesía}. Cursos de verano UNED. Madrid (Spain). \\
+\years{2016}\underline{Bermúdez Sabel, H.}, “Hermenéutica dixital, métodos computacionais e filoloxía”, \textit{Retazos da arte, sociedade e cultura na Idade Media Europea III: Das Humanidades Dixitais a J. R. R. Tolkien, novos horizontes nos estudos medievais}. Universidade de Verán – Universidade de Santiago de Compostela. Santiago de Compostela (Spain).\\
+\years{2016}Birnbaum, David J. \amper{} \underline{H. Bermúdez Sabel}, “Digital collation tools”, \textit{Text as process: Genetic and Textual Criticism in the Digital Age}. University of Pittsburgh (USA).\\
+\years{2016}\underline{Bermúdez Sabel, H.}, “An orientation to Zotero and LaTeX”, Lecture to the English Literature Capstone course at the University of Pittsburgh at Greensburg (USA).\\
+\years{2015}\underline{Bermúdez Sabel, H.}, “Tecnologías XML y análisis de redes. Vinculación entre centros de producción literaria y centros de poder”, \textit{Espiritualidad en la Edad Media. Perspectivas y Metodologías}. Proyecto Claustra. Santiago de Compostela (Spain).\\
+\years{2015}\underline{Bermúdez Sabel, H.}, \textit{Tecnoloxías X para medievalistas}. Seminario de Estudios Medievales Hispánicos. Santiago de Compostela (Spain).\\
+\years{2014}Birnbaum, D., Bojadžiev, A. \amper{} \underline{H. Bermúdez Sabel}, \textit{XML and TEI for Slavic Philology}. Varna (Bulgaria).
+
+
+% 
+% 
+% 
+% \subsection{Digital Humanities Web Applications}\label{websites}
+% 
+% \years{2020}\textit{Pygmalion. A tool to draw interactive semantic maps}\\
+% \href{https://woposs.unine.ch/pygmalion.php}{https://woposs.unine.ch/pygmalion.php}
+% 
+% \begin{itemize}[noitemsep,topsep=0pt]
+%  \item Role: conceptualisation, assisting with development, testing.
+%  \item Technologies employed: JavaScript, SVG.
+% \end{itemize}
+% 
+% 
+% 
+% \years{2019}\textit{Galician-Portuguese secular lyric: philology and historical linguistics}\\
+% \href{http://gl-pt.obdurodon.org}{http://gl-pt.obdurodon.org}
+% 
+% 
+% \begin{itemize}[noitemsep,topsep=0pt]
+% \item Role: Principal investigator. Individual research project.
+%   \item Development of a synoptic digital edition.
+%   \item Transcription of medieval texts encoding palaeographic particularities.
+%   \item Development of a digital workstation for textual exploration and quantitative analysis of linguistic variation phenomena.
+% \item Technologies and software employed: XML-TEI, XSLT, XQuery, SVG, PHP, JavaScript, eXist DB.
+%  \end{itemize}
+% 
+% \years{2019}\textit{DISCOver: an interface to explore the Diachronic Spanish Sonnet Corpus (DISCO)}\\
+% \href{http://prf1.org/disco}{http://prf1.org/disco}
+% 
+% 
+% \begin{itemize}[noitemsep,topsep=0pt]
+% \item Role: Graphical User Interface main developer.
+% \item Technologies employed: SQL, PHP, JavaScript.
+% \end{itemize}
+% 
+% 
+% \years{2016}\textit{Mapping Medieval Galician-Portuguese Poetry and its networks}\\
+% \href{http://www.usc.es/athene}{http://www.usc.es/athene}
+% 
+% \begin{itemize}[noitemsep,topsep=0pt]
+% \item Role: Principal investigator. Individual research project.
+%  \item Development of interactive cartographic representations concerning Galician-Portuguese troubadours’ biographical data and the cultural centres of this poetic school.
+%  \item Network analysis and visualization.
+%  \item Technologies and software employed: XML-TEI, XSLT, KML, SVG, Cytoscape, Google Earth.
+% \end{itemize}
+% 
+% \subsection{Digital Humanities Tutorials}\label{tutorials}
+% \urlstyle{same}
+% \noindent
+% \years{2020}\underline{Bermúdez Sabel, H.} \amper{} F. Dell’Oro. \textit{Automatic annotation of classical languages: Greek and Latin}. 
+% \url{https://github.com/WoPoss-project/automatic\_annotation} \\
+% \years{2020}\underline{Bermúdez Sabel, H.}, Nury, E. \amper{} E. Spadini. \textit{Introduction to automatic collation}. \url{https://automaticcollationlausanne2020.github.io}\\
+% \years{2015}\underline{Bermúdez Sabel, H.} \textit{Introduction to KML}. \href{http://dh.obdurodon.org/kml/kml-tutorial.xhtml}{http://dh.obdurodon.org/kml/kml-tutorial.xhtml}
+
+
+\section{Participation in research teams}
+\years{2020--2022}\textit{Communicating the TEI to a Multilingual User Community} (2001-07353). Funded by The Andrew W. Mellon Foundation.\\
+\years{2019--2023}\textit{A world of possibilities. Modal pathways over an extra-long period of time: the diachrony of modality in the Latin language} (SNSF PP00P1\_176778). Funded by the Swiss National Foundation.\\
+\years{2017--2019}\textit{POSTDATA – Poetry Standardization and Linked Open Data} (ERC-2015-STG-679528). 
+Funded by the European Research Council (ERC).\\
+\years{2016--2019}\textit{Paleografía, lingüística y filología. Laboratorio online de la lírica gallego-portuguesa} (FFI2015-68451-P). Funded by the Ministerio de Economía y Competitividad (Spanish Ministry of Economy and Competitiveness).\\
+\years{2014--2016}\textit{Interdisciplinary Medieval Studies Network}. Funded by the Xunta de Galicia (Autonomous Community of Galicia Government).\\
+\years{2013--2016}\textit{Competitive research unit GI-1350-Románicas}. Funded by the Xunta de Galicia (Autonomous Community of Galicia Government).
+
+\section{Research stays}
+ \years{2019} Institute of Czech Literature, Prague (Czech Republic), 1 month (March). \textit{Josef Dobrovský Fellowship}, funded by the Czech Academy of Sciences. \\
+\years{2016} University of Pittsburgh, Pittsburgh (USA), 3 months (January--April). \textit{Short research stays abroad for university faculty in training} (Programa de Formación del Profesorado Universitario, FPU) funded by the Ministerio de Educación, Cultura y Deporte (Spanish Government)\\
+\years{2014} University of Pittsburgh, Pittsburgh (USA), 4 months (August--December). \textit{Becas de Posgrado en el Extranjero} (Fundación Pedro Barrié de la Maza). \\
+\years{2014} An Foras Feasa (University of Ireland, Maynooth), Maynooth (Ireland), 2 months (March--May).
+
+
+\section{Teaching}
+
+\subsection{Digital Humanities courses}
+
+\years{2018--2021}\textit{TEI Mark-up and Annotation (II): XSLT, XPath XQuery (Transformations)}\\
+\ind{Institution:} National Distance Education University (UNED)\\
+\ind{Degree:} Master in Digital Humanities\\
+\years{2016--2021}\textit{Close and distant reading: visualizing data in the Humanities}\\
+\ind{Institution:} National Distance Education University (UNED)\\
+\ind{Degree:} Master in Digital Humanities / Professional Certificate in Digital Edition / Professional Certificate in Digital Humanities\\
+\years{2016--2017}\textit{TEI modules: transcription of primary sources, manuscripts, and verse}\\
+\ind{Institution:} National Distance Education University (UNED)\\
+\ind{Degree:} Professional Certificate in Digital Edition\\
+\years{2015--2016}\textit{Computational Methods in the Humanities}\\
+\ind{Institution:} University of Pittsburgh\\
+%\ind{Degree:} Degrees in Humanities (Honors College)\\
+      \years{2015--2017}\textit{Information Technologies in Romance linguistic and literary studies}\\
+\ind{Institution:} Universidade de Santiago de Compostela\\
+\ind{Degree:} Major in Romance Philology – Second year\\
+      
+\subsection{Medieval Studies \& Romance Philology}
+
+\years{2016--2017}\textit{The emergence of Romance languages}\\
+\ind{Institution:} Universidade de Santiago de Compostela\\
+\ind{Degree:} Major in Romance Philology – Second year\\
+\years{2016--2017}\textit{Art and Literature in the Ancient and Medieval Worlds}\\
+\ind{Institution:} Universidade de Santiago de Compostela\\
+\ind{Degree:} Major in Art History – First year\\
+\years{2015--2016}\textit{Transmission of Romance texts}\\
+\ind{Institution:} Universidade de Santiago de Compostela\\
+\ind{Degree:} Major in Romance Philology – Second year\\
+\years{2015--2016}\textit{Romance Literature: short narrative}\\
+\ind{Institution:} Universidade de Santiago de Compostela\\
+\ind{Degree:} Major in Romance Philology – Fourth year \\
+\years{2014--2015}\textit{Romance Textual Criticism}\\
+      \ind{Institution:} Universidade de Santiago de Compostela\\
+\ind{Degree:} Major in Romance Philology – Fourth year
+% 
+% \subsection{Student supervision}
+% 
+% \ind{Student:} Laura Dobrita\\
+% \ind{PhD thesis title:} \textit{Los avatares de la métrica en los sonetos rumanos del siglo XIX}\\
+% \ind{Role:} Co-director (Director: Clara Isabel Martínez Cantón)\\
+% \ind{Degree:} Programa de Doctorado en Filología. Estudios lingüísticos y literarios\\
+% \ind{Institution:} Universidad Nacional de Educación a Distancia (Spain)\\
+% \ind{Estimated date of defense:} December 2021\\
+% 
+% \ind{Student:} Alejandra Grandal Castillo\\
+% \ind{Master thesis title:} \textit{El género en las novelas de Jane Austen}\\
+% \ind{Role:} Main supervisor\\
+% \ind{Degree:} Diploma de Especialista Universitario en Humanidades Digitales\\
+% \ind{Institution:} Universidad Nacional de Educación a Distancia (Spain)\\
+% \ind{Estimated date of defense:} September 2021\\
+% 
+% \ind{Student:} Filomena Anna Dalessandro\\
+% \ind{Master thesis title:} \textit{Emigración femenina en la literatura contemporánea: Italia y España}\\
+% \ind{Role:} Main supervisor\\
+% \ind{Degree:} Diploma de Especialista Universitario en Humanidades Digitales\\
+% \ind{Institution:} Universidad Nacional de Educación a Distancia (Spain)\\
+% \ind{Estimated date of defense:} September 2021
+
+
+%\hrule
+\section{Service to the profession}
+\years{2021--}Elected member of the Text Encoding Initiative's (TEI) Technical Council.\\
+\years{2020--}Member of the Text Encoding Initiative Working Group “Internationalization (I18n)”.\\
+\years{2020}Reviewer for \textit{Bulletin of Hispanic Studies} (ISSN: 1475-3839).\\
+%\years{2020}Reviewer for the GraphSDE2019 Proceedings.
+\years{2020}Reviewer for the conference \textit{Digital Humanities 2020 -
+Intersections/Carrefours}, Ottawa, Canada.\\
+\years{2019}Ph.D. Thesis Assesment for International Mention of the doctoral thesis \textit{Gestualidad y acción femeninas en espejos de damas del siglo XV} by Laura Pereira Domínguez (Universidad de Santiago de Compostela).\\
+\years{2019}Technical reports for publishing house Editorial de la Universidad de Sevilla.\\
+\years{2019}Reviewer of the journal \textit{Liinc em Revista} (ISSN: 1808-3536).\\
+\years{2018--}Reviewer for journal \textit{Revista de Humanidades Digitales} (ISSN: 2531-1786).\\
+\years{2017}Member of the Organising Board for International Conference \textit{Humanidades Dixitais: olladas cara á Idade Media}, organised by the Rede de Estudos Medievais Interdisciplinares.\\
+\years{2015}Member of the Local Organising Committee of the International Colloquium \textit{A expresión das emocións na lírica románica medieval}, organised by the Area of Romance Philology of the Universidade de Santiago de Compostela\\
+\years{2012}Member of the Local Organising Committee of the International Colloquium \textit{Parodia e debate metaliterarios na Idade Media}, organised by the Area of Romance Philology of the Universidade de Santiago de Compostela and the Asociación Hispánica de Literatura Medieval.
+
+
+\section{Grants, honors \& awards}
+\noindent
+\years{2018}\textit{Josef Dobrovský Fellowship} funded by the Czech Academy of Sciences.\\
+\years{2017} Best Student Paper Award, \textit{Language, Data  and Knowledge 2017}. Galway, Ireland.\\
+\years{2017} Best Datathon Result Award, \textit{Second Datathon on Linguistic Linked Open Data}. Cercedilla, Spain.\\
+\years{2013-2016}\textit{PhD Scholarship (University Faculty Training Programme)} funded by the Ministerio de Educación, Cultura y Deporte (Spanish Government).\\
+\years{2014}\textit{Postgraduate grant for international study} funded by the Fundación Pedro Barrié de la Maza.\\
+\years{2012-2013}\textit{Predoctoral Scholarship} funded by the Consellería de Cultura Educación e Ordenación Universitaria (Government of the Autonomous Community of Galicia).\\
+\years{2012}\textit{Premio Fin de Carreira da Xunta de Galicia} (highest GPA in the correspondent BA degree in all three universities of the Autonomous Community of Galicia).\\
+\years{2011-2012}\textit{Scholarship for studies leading to master’s degree} funded by the Ministerio de Educación, Cultura y Deporte (Spanish Government).
+
+
+%\vspace{1cm}
+\vfill{}
+%\hrulefill
+
+\begin{center}
+{\scriptsize  Last updated: \today\- %•\- Typeset in \XeTeX 
+\\
+%\fontspec{Times New Roman}
+\href{https://www.unine.ch/isla/home/equipe/helena-bermudez-sabel.html}{https://www.unine.ch/isla/home/equipe/helena-bermudez-sabel.html}
+}
+\end{center}
+
+\end{document}
