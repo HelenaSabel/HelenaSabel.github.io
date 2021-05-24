@@ -2,9 +2,10 @@
 ---
 
 @import "{{ site.theme }}";
-
+.btn {
+  display: none !important;
+}
 #forkme_banner{ display: none !important; }
-
 li > span {
     font-weight: bold;
     color: #2D2D2D;
