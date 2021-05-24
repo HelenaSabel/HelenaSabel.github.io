@@ -2,11 +2,10 @@
 ---
 
 @import "{{ site.theme }}";
-
-.btn {
+#forkme_banner {
     display: none !important;
 }
-#forkme_banner {
+.btn {
     display: none !important;
 }
 li > span {
