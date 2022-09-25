@@ -2,7 +2,6 @@ cv/*.aux
 cv/*.log
 cv/*.out
 cv/*.synctex.gz
-presentations/plugin
 presentations/test
 presentations/gulpfile.js
 presentations/*.json
