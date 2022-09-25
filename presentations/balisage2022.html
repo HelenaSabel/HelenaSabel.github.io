@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>ATOP</title>
+		<link rel="stylesheet" href="dist/reset.css" />
+		<link rel="stylesheet" href="dist/reveal.css" />
+		<link rel="stylesheet" href="dist/theme/white.css" />
+		<link rel="stylesheet" href="css/tei.css" />
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" />
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Another TEI ODD Processor</h1>
+					<p>Syd Bauman, Helena Bermúdez-Sabel, Martin Holmes, David Maus</p>
+				</section>
+				<section>
+					<h2>Outline</h2>
+					<ul>
+						<li>a few words about TEI</li>
+						<li>what’s ODD</li>
+						<li>and why we need another processor</li>
+						<li>the work so far</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Text Encoding Initiative</h2>
+						<ul>
+							<li>1980s: CoP with the goal to develop guidelines for encoding
+								machine-readable texts of interest to the humanities and social
+								sciences</li>
+							<li>What the <a href="https://tei-c.org/" target="_blank">TEI</a> is
+								today: its own ecosystem <ul>
+									<li>technical standard</li>
+									<li>toolchain</li>
+									<li>conference series, mailing list, journal, repository, wiki,
+										33 GitHub repositories...</li>
+								</ul></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>The TEI Guidelines</h2>
+						<p style="text-align:left">The <em><a href="https://tei-c.org/guidelines/"
+									target="_blank">TEI Guidelines</a></em> and its schemas are
+							generated from a single XML resource that contains:</p>
+						<ol>
+							<li>Descriptive prose</li>
+							<li>Examples of usage</li>
+							<li>Formal declarations for components of the TEI Abstract Model: <ul>
+									<li>elements and attributes</li>
+									<li>modules</li>
+									<li>classes and macros</li></ul></li>
+						</ol>
+					</section>
+					<section>
+						<h2>ODD: One Document Does it All</h2>
+						<ul>
+							<li>TEI’s own built-in schema language also used for customizing the TEI
+								language and documenting the customizations (Bauman 2019)</li>
+							<li>ODD chaining: create a customization derived from other ODD
+								customizations</li>
+							<li class="fragment">ODD as a literate programming language for XML
+								schemas separate from TEI (e.g. <a
+									href="https://www.w3.org/TR/its20/" target="_blank"
+									>Internationalization Tag Set</a>)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tools</h2>
+						<ul>
+							<li>
+								<a href="https://github.com/TEIC/Stylesheets" target="_blank">TEI
+									Stylesheets</a> (to transform TEI XML documents to various
+								formats and to/from a few formats, including the conversion of a
+								customization ODD to a customized RELAX NG schema with embedded
+								Schematron rules) </li>
+							<li><a href="https://romabeta.tei-c.org/" target="_blank">Roma</a> (web
+								application for ODD creation and customization)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>The TEI Stylesheets</h2>
+						<ul>
+							<li>Written by the late Sebastian Rahtz</li>
+							<li>“The TEI Stylesheets are a work of genius” (Holmes 2021: 3)</li>
+							<li class="fragment">“Sebastian was such a genius he really found it
+								impossible to imagine how dim the rest of us actually are” (Holmes
+								2021: 3)</li>
+							<li class="fragment">“I consider the Stylesheets as broken beyond
+								repair. They work to a certain degree but they are, from my point of
+								view, effectively unmaintainable.” David Maus, <a
+									href="https://github.com/TEIC/Stylesheets/pull/477#issuecomment-805138553I"
+									target="_blank">commenting on a PR</a>, 2020-11</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>ATOP: Another TEI ODD Processor</h2>
+						<ul>
+							<li>Mission: new processor ODD → RNG+Schematron</li>
+							<li>(Custom documentation is being tackled by a different subgroup
+								linked to <a href="https://teipublisher.com/index.html"
+									target="_blank">TEIPublisher</a>)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Software design</h2>
+						<ul>
+							<li>Future maintenance informs every decision </li>
+							<li>Modular programming</li>
+							<li>Decision documentation</li>
+							<li>Well documented test suites from the start</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Some of the established guardrails</h2>
+						<ul>
+							<li>Strict file naming convention</li>
+							<li>Strict naming conventions for variables, parameters, functions, and
+								templates</li>
+							<li>Mandatory use of <code>@as</code> and of <code>xd:</code>
+								elements</li>
+							<li>Strict definition of what subset of TEI ODD will be processed (and
+								not)</li>
+							<li>Schematron rules and XSpec scenarios</li>
+						</ul>
+					</section>
+					<section>
+						<h2>The work so far</h2>
+						<ul>
+							<li>Our GitHub repo: <a href="https://github.com/TEIC/atop"
+									>https://github.com/TEIC/atop</a></li>
+							<li>Detailed Wiki</li>
+						</ul>
+					</section>
+					<section>
+						<img src="images/wiki.png" alt="wiki screenshot" />
+					</section>
+					<section>
+						<h2>The work so far</h2>
+						<ul>
+							<li>Our GitHub repo: <a href="https://github.com/TEIC/atop"
+									>https://github.com/TEIC/atop</a></li>
+							<li>Detailed Wiki</li>
+							<li>Early stages</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>References</h2>
+						<ul>
+							<li>Bauman, Syd (2019): “A TEI Customization for Writing TEI
+								Customizations”. <em>Journal of the Text Encoding Initiative</em>,
+								Issue 12. <a href="https://doi.org/10.4000/jtei.2573"
+									>doi:10.4000/jtei.2573</a></li>
+							<li>Holmes, Martin (2021): “Are the TEI Stylesheets really broken beyond
+								repair?” (Conference presentation.) <em>Text Encoding Initiative
+									Conference 2021</em> (online). 2021-10-25. </li>
+						</ul>
+					</section>
+					<section>
+						<h1>Thank you!</h1>
+					</section>
+				</section>
+			</div>
+		</div>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+                
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins:[RevealMarkdown, RevealHighlight, RevealNotes]
+            });</script>
+	</body>
+</html>
