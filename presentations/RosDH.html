@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/pres.css" />
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+        <link rel="stylesheet" href="plugin/pointer/pointer.css" />        
         <style>
             .code pre {
                 width: 100%
@@ -77,7 +78,7 @@
                                 </ul></li>
                             <li class="fragment">Increase of corpus-based approaches in recent years <ul>
                                     <li>Corpus development is easier due to <ul>
-                                            <li>Source availabilty</li>
+                                            <li>Source availability</li>
                                             <li>Technological progress (automatized pipelines)</li>
                                         </ul></li>
                                 </ul></li>
@@ -86,9 +87,9 @@
                     <section>
                         <h2>Specific challenges of historical &amp; diachronic corpora</h2>
                         <ul>
-                            <li>Sources with different editorial criteria</li>
-                            <li>Coexistance of different ortographic conventions</li>
-                            <li>Linguistic variation</li>
+                            <li class="fragment">Sources with different editorial criteria</li>
+                            <li class="fragment">Coexistence of different orthographic conventions</li>
+                            <li class="fragment">Linguistic variation</li>
                             <li class="fragment">
                                 <strong>Editorial decisions (e.g. normalisation) might require
                                     knowledge we don’t have yet</strong>
@@ -109,7 +110,7 @@
                         <ol>
                             <li class="fragment">Advantages for multi-level annotation. In
                                 particular to annotate specific linguistic phenomena different from
-                                the common NLP tasks <ul class="fragment"><li>Lemma, PoS,
+                                the common Natural Language Processing (NLP) tasks <ul class="fragment"><li>Lemma, PoS,
                                         morphosyntactic description, dependence and constituent
                                         analysis, word sense disambiguation</li></ul></li>
                             <li class="fragment">Vocabulary and encoding practises to tackle
@@ -119,7 +120,7 @@
                         </ol>
                     </section>
                     <section>
-                        <img src="images/plautus-1.png" alt="screenshot from OLA" />
+                        <img src="images/plautus-1.png" alt="screenshot from OLA" class="fragment"/>
                         <p style="font-size:30px">Source of <em>OLA: A Library of Annotated Latin
                                 Texts</em> (Celano 2021-)</p>
                     </section>
@@ -337,7 +338,7 @@
                     <section>
                         <h2>Feature structures (FS): advantages</h2>
                         <ul>
-                            <li class="fragment">Reusability mechanisms (e.g. shared features)</li>
+                            <li>Reusability mechanisms (e.g. shared features)</li>
                             <li class="fragment">Means to document the implementation of a FS model
                                 in a structured way through the Feature System Declaration (FSD)<ul
                                     class="fragment">
@@ -511,6 +512,8 @@
         <script src="plugin/notes/notes.js"></script>
         <script src="plugin/markdown/markdown.js"></script>
         <script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/pointer/pointer.js"></script>
+        
         <script>
             // More info about initialization & config:
             // - https://revealjs.com/initialization/
@@ -519,7 +522,7 @@
                 hash: true,
                 
                 // Learn about plugins: https://revealjs.com/plugins/
-                plugins:[RevealMarkdown, RevealHighlight, RevealNotes], slideNumber: 'c'
+                plugins:[RevealMarkdown, RevealHighlight, RevealPointer, RevealNotes], slideNumber: 'c'
             });</script>
     </body>
 </html>
