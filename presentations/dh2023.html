@@ -4,16 +4,21 @@
         <meta charset="utf-8" />
         <meta name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>H. Bermúdez Sabel -- Digital-born editing models for Historical Linguistics
-            studies</title>
+        <title>H. Bermúdez Sabel -- Exploring genderlect markers in a corpus of 19th c. Spanish
+            novels studies</title>
         <link rel="stylesheet" href="dist/reset.css" />
         <link rel="stylesheet" href="dist/reveal.css" />
         <link rel="stylesheet" href="dist/theme/white.css" />
         <link rel="stylesheet" href="css/pres.css" />
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css" />
-        <link rel="stylesheet" href="plugin/pointer/pointer.css" />        
+        <link rel="stylesheet" href="plugin/pointer/pointer.css" />
         <style>
+            .wordLists em {
+                font-size: smaller}
+            .left {
+                text-align: left;
+            }
             .code pre {
                 width: 100%
             }
@@ -28,7 +33,7 @@
                 color: maroon}
             .odd_label {
                 font-weight: bold}
-        
+            
             .logo {
                 margin-top: 0.5em;
                 display: flex;
@@ -38,26 +43,29 @@
                 height: 1.5em;
                 margin: 0 0.5em 0 0}
             li > span {
-                font-weight: 600}</style> 
+                font-weight: 600}</style>
     </head>
     <body>
         <div class="reveal">
             <div class="slides">
                 <section>
                     <section>
-                        <h2>Digital-born editing models for Historical Linguistics studies</h2>
+                        <h2>Exploring genderlect markers in a corpus of 19th c. Spanish novels</h2>
                         <p>
                             <strong>Helena Bermúdez Sabel</strong>
                         </p>
-                        <p>Mare Balticum Fellow 2023</p>
                     </section>
                     <section>
                         <h2>Outline</h2>
                         <ul>
-                            <li>Rationale: digital scholarly editing, corpus-based research, and
-                                historical linguistics</li>
-                            <li>Data modelling and linguistically annotated digital editions</li>
-                            <li>An use case: a synoptic edition of Galician-Portuguese secular lyric</li>
+                            <li>Rationale</li>
+                            <li>Methodology</li>
+                            <li>Results <ul>
+                                    <li>Distinctive lexicon</li>
+                                    <li>Epistemic adverbs and adjectives</li>
+                                    <li class="fragment strike">Distribution <em>usted/vos</em></li>
+                                </ul></li>
+                            <li>Conclusions</li>
                         </ul>
                     </section>
                 </section>
@@ -66,438 +74,429 @@
                         <h1>Rationale</h1>
                     </section>
                     <section>
-                        <h2>Corpus-based approaches in Historical Linguistics</h2>
+                        <h2>Sociolinguistics and literary corpora</h2>
                         <ul>
-                            <li>Traditional predominance of example-selection approaches <ul>
-                                    <li>Availability of linguistic resources to carry out this
-                                        selection <ul>
-                                            <li>Historical dictionaries</li>
-                                            <li>Catalogs and inventories of ancient texts</li>
-                                            <li>Glossaries in scholarly editions</li>
-                                        </ul></li>
-                                </ul></li>
-                            <li class="fragment">Increase of corpus-based approaches in recent years <ul>
-                                    <li>Corpus development is easier due to <ul>
-                                            <li>Source availability</li>
-                                            <li>Technological progress (automatized pipelines)</li>
-                                        </ul></li>
+                            <li>Scarcity of sociolinguistic studies focused on literary sources
+                                (outside of diatopic studies)</li>
+                            <li>Importance of describing the linguistic register used in literary
+                                writing</li>
+                            <li>Literary corpora and exploitation of certain social parameters like
+                                gender. Advantages: <ul>
+                                    <li>Known sociologic profile</li>
                                 </ul></li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Specific challenges of historical &amp; diachronic corpora</h2>
-                        <ul>
-                            <li class="fragment">Sources with different editorial criteria</li>
-                            <li class="fragment">Coexistence of different orthographic conventions</li>
-                            <li class="fragment">Linguistic variation</li>
-                            <li class="fragment">
-                                <strong>Editorial decisions (e.g. normalisation) might require
-                                    knowledge we don’t have yet</strong>
-                                <ul class="fragment">
-                                    <li>E.g.: the representation of the new sounds in Romance
-                                        languages</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <h2>Research question</h2>
+                        <p>What new knowledge concerning genderlects can we gain through statistical
+                            methods?</p>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h1>Data modelling</h1>
+                        <h1>Methodology</h1>
                     </section>
                     <section>
-                        <h2>Why TEI-XML?</h2>
-                        <ol>
-                            <li class="fragment">Advantages for multi-level annotation. In
-                                particular to annotate specific linguistic phenomena different from
-                                the common Natural Language Processing (NLP) tasks <ul class="fragment"><li>Lemma, PoS,
-                                        morphosyntactic description, dependence and constituent
-                                        analysis, word sense disambiguation</li></ul></li>
-                            <li class="fragment">Vocabulary and encoding practises to tackle
-                                phenomena related to textual transmission</li>
-                            <li class="fragment">Possibility to combine inline and stand-off
-                                annotation</li>
-                        </ol>
+                        <h2>Corpus</h2>
+                        <ul>
+                            <li>Source: <a href="https://www.distant-reading.net/eltec/"
+                                    target="_blank">European Literary Text Collection
+                                (ELTeC)</a></li>
+                            <li>Exclusion of American authors</li>
+                            <li>Corpus: 86 novels (1840–1919) <ul>
+                                    <li>22 novels by women</li>
+                                    <li>7,380,761 words (20% by women)</li>
+                                </ul></li>
+                        </ul>
                     </section>
                     <section>
-                        <img src="images/plautus-1.png" alt="screenshot from OLA" class="fragment"/>
-                        <p style="font-size:30px">Source of <em>OLA: A Library of Annotated Latin
-                                Texts</em> (Celano 2021-)</p>
+                        <h2>Zeta</h2>
+                        <ul>
+                            <li>Comparison of two groups of texts (G1 and G2) <ul>
+                                    <li>For each group, extraction a number of segments of fixed
+                                        size</li>
+                                    <li>For each term (t) in the vocabulary (e.g. lemmas), the
+                                        segment proportions (ps) of each group in which the term
+                                        appears at least once (binarization) are calculated </li>
+                                    <li>Zeta is the result of subtracting the two proportions</li>
+                                </ul></li>
+                        </ul>
+                        <img src="images/zeta.png" alt="zeta formula" />
+                        <br />
+                        <ul class="left" style="display:block">
+                            <li>Software: <a href="https://github.com/cligs/pyzeta" target="blank"
+                                    >pyzeta</a></li>
+                        </ul>
                     </section>
                     <section>
-                        <img src="images/plautus-2.png" alt="screenshot from OLA" />
-                        <p style="font-size:30px">Source of <em>OLA: A Library of Annotated Latin
-                                Texts</em> (Celano 2021-)</p>
-                    </section>
-                    <section>
-                        <img src="images/plautus-3.png" alt="screenshot from OLA" />
-                        <p style="font-size:30px">PAULA examples from <em>OLA: A Library of
-                                Annotated Latin Texts</em> (Celano 2021-)</p>
-                    </section>
-                    <section>
-                        <img src="images/plautus-4.png" alt="screenshot from OLA" />
-                        <p style="font-size:30px">PAULA examples from <em>OLA: A Library of
-                                Annotated Latin Texts</em> (Celano 2021-)</p>
-                    </section>
-                    <section>
-                        <img src="images/plautus-5.png" alt="screenshot from OLA" />
-                        <p style="font-size:30px">PAULA examples from <em>OLA: A Library of
-                                Annotated Latin Texts</em> (Celano 2021-)</p>
-                    </section>
-                    <section>
-                        <img src="images/plautus-6.png" alt="screenshot from OLA" />
-                        <p style="font-size:30px">PAULA examples from <em>OLA: A Library of
-                                Annotated Latin Texts</em> (Celano 2021-)</p>
-                    </section>
-                    <section>
-                        <img src="images/plautus-7.png" alt="screenshot from OLA" />
-                        <p style="font-size:30px">PAULA examples from <em>OLA: A Library of
-                                Annotated Latin Texts</em> (Celano 2021-)</p>
-                    </section>
-                    <section>
-                        <img src="images/plautus-8.png" alt="screenshot from OLA" />
-                        <p style="font-size:30px">PAULA examples from <em>OLA: A Library of
-                                Annotated Latin Texts</em> (Celano 2021-)</p>
-                    </section>
-                    <section>
-                        <p>How convenient is character offset-based stand-off annotation when
-                            working with historical texts?</p>
-                    </section>
-                    <section>
-                        <h2>Inline linguistic information in TEI</h2>
-                        <table class="wovenodd">
+                        <h2>Zeta variants</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td style="border:0"></td>
+                                    <td colspan="2">
+                                        <strong>Segment proportion</strong>
+                                    </td>
+                                    <td colspan="2">
+                                        <strong>Relative frequencies</strong>
+                                    </td>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                    <td colspan="2" class="wovenodd-col2"
-                                            ><strong>att.linguistic</strong> provides a set of
-                                        attributes concerning linguistic features of tokens, for
-                                        usage within token-level elements, specifically <a
-                                            class="gi"
-                                            title="(word) represents a grammatical (not necessarily orthographic) word."
-                                            href="ref-w.html">w</a> and <a class="gi"
-                                            title="(punctuation character) contains a character or string of characters regarded as constituting a single punctuation mark."
-                                            href="ref-pc.html">pc</a> in the analysis module. [<a
-                                            class="link_ptr" href="AI.html#AILALW"
-                                            title="Lightweight Linguistic Annotation"><span
-                                                class="headingNumber">17.4.2 </span>Lightweight
-                                            Linguistic Annotation</a>]</td>
-                                </tr>
-                                <tr>
-                                    <td class="wovenodd-col1">Module</td>
-                                    <td class="wovenodd-col2">analysis — Simple Analytic
-                                        Mechanisms</td>
-                                </tr>
-                                <tr>
-                                    <td class="wovenodd-col1">Members</td>
-                                    <td class="wovenodd-col2">
-                                        <span class="showmembers1">
-                                            <a class="link_odd_elementSpec"
-                                                title="(punctuation character) contains a character or string of characters regarded as constituting a single punctuation mark."
-                                                href="ref-pc.html">pc</a>
-                                            <a class="link_odd_elementSpec"
-                                                title="(word) represents a grammatical (not necessarily orthographic) word."
-                                                href="ref-w.html">w</a>
-                                        </span>
+                                    <td></td>
+                                    <td>
+                                        <em>normal</em>
                                     </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>substraction</strong>
+                                    </td>
+                                    <td>sd0</td>
+                                    <td>sd2</td>
+                                    <td>sr0</td>
+                                    <td>sr2</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>division</strong>
+                                    </td>
+                                    <td>dd0</td>
+                                    <td>dd2</td>
+                                    <td>dr0</td>
+                                    <td>dr2</td>
                                 </tr>
                             </tbody>
                         </table>
                     </section>
                     <section>
-                        <h2>Inline linguistic information in TEI</h2>
-                        <table class="attList" style="font-size:smaller">
-                            <tr>
-                                <td class="odd_label">lemma</td>
-                                <td class="odd_value">provides a lemma (base form) for the word,
-                                    typically uninflected and serving both as an identifier (e.g. in
-                                    dictionary contexts, as a headword), and as a basis for
-                                    potential inflections. </td>
-                                <td class="code">
-                                    <pre> 
-<span class="element">&lt;w <span class="attribute">lemma</span>="<span class="attributevalue">Arznei</span>"&gt;</span>Artzeneyen<span class="element">&lt;/w&gt;</span>
-                                       </pre>
-                                </td>
-                            </tr>
+                        <h2>Zeta variants</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td style="border:0"></td>
+                                    <td colspan="2">
+                                        <strong>Segment proportion</strong>
+                                    </td>
+                                    <td colspan="2">
+                                        <strong>Relative frequencies</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>substraction</strong>
+                                    </td>
+                                    <td style="background-color:lightgrey">sd0</td>
+                                    <td>sd2</td>
+                                    <td>sr0</td>
+                                    <td>sr2</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>division</strong>
+                                    </td>
+                                    <td>dd0</td>
+                                    <td>dd2</td>
+                                    <td>dr0</td>
+                                    <td>dr2</td>
+                                </tr>
+                            </tbody>
                         </table>
+                        <p>Burrows (2007)</p>
                     </section>
                     <section>
-                        <h2>Inline linguistic information in TEI</h2>
-                        <table class="attList" style="font-size:smaller">
-                            <tr>
-                                <td class="odd_label">lemmaRef</td>
-                                <td class="odd_value">provides a pointer to a definition of the
-                                    lemma for the word, for example in an online lexicon. </td>
-                                <td class="code">
-                                    <pre> 
-<span class="element">&lt;w <span class="attribute">type</span>="<span class="attributevalue">verb</span>" <span class="attribute">lemma</span>="<span class="attributevalue">hit</span>"<br /> <span class="attribute">lemmaRef</span>="<span class="attributevalue">http://www.ex.com/lexicon/hitvb.xml</span>"<br />  &gt;</span>hitt<span class="element">&lt;m <br />  <span class="attribute">type</span>="<span class="attributevalue">suffix</span>"&gt;</span>ing<span class="element">&lt;/m&gt;</span><br /><span class="element">&lt;/w&gt;</span>
-                                       </pre>
-                            </tr>
+                        <h2>Zeta variants</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td style="border:0"></td>
+                                    <td colspan="2">
+                                        <strong>Segment proportion</strong>
+                                    </td>
+                                    <td colspan="2">
+                                        <strong>Relative frequencies</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>substraction</strong>
+                                    </td>
+                                    <td>sd0</td>
+                                    <td style="background-color:lightgrey">sd2</td>
+                                    <td>sr0</td>
+                                    <td>sr2</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>division</strong>
+                                    </td>
+                                    <td>dd0</td>
+                                    <td>dd2</td>
+                                    <td>dr0</td>
+                                    <td>dr2</td>
+                                </tr>
+                            </tbody>
                         </table>
+                        <p>Schöch et al. (2018)</p>
                     </section>
                     <section>
-                        <h2>Inline linguistic information in TEI</h2>
-                        <table class="attList" style="font-size:smaller">
-                            <tr>
-                                <td class="odd_label">pos</td>
-                                <td class="odd_value">(part of speech) indicates the part of speech
-                                    assigned to a token (i.e. information on whether it is a noun,
-                                    adjective, or verb), usually according to some official
-                                    reference vocabulary (e.g. for German: STTS, for English: CLAWS,
-                                    for Polish: NKJP, etc.). </td>
-                                <td class="code">
-                                    <pre> 
-<span class="element">&lt;s&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">PPER</span>"&gt;</span>Wir<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">VVFIN</span>"&gt;</span>fahren<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">APPR</span>"&gt;</span>in<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">ART</span>"&gt;</span>den<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">NN</span>"&gt;</span>Urlaub<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">$.</span>"&gt;</span>.<span class="element">&lt;/w&gt;</span><br /><span class="element">&lt;/s&gt;</span>
-                                       </pre>
-                                </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <section>
-                        <h2>Inline linguistic information in TEI</h2>
-                        <table class="attList" style="font-size:smaller">
-                            <tr>
-                                <td class="odd_label">msd</td>
-                                <td class="odd_value">(morphosyntactic description) supplies
-                                    morphosyntactic information for a token, usually according to
-                                    some official reference vocabulary (e.g. for German: <a
-                                        class="link_ref"
-                                        href="http://www.ims.uni-stuttgart.de/forschung/ressourcen/lexika/TagSets/stts-1999.pdf"
-                                        >STTS-large tagset</a>; for a feature description system
-                                    designed as (pragmatically) universal, see <a class="link_ref"
-                                        href="http://universaldependencies.org/u/feat/index.html"
-                                        >Universal Features</a>). </td>
-                                <td class="code">
-                                    <pre> 
-<span class="element">&lt;ab&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">PPER</span>" <span class="attribute">msd</span>="<span class="attributevalue">1.Pl.*.Nom</span>"&gt;</span>Wir<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">VVFIN</span>" <span class="attribute">msd</span>="<span class="attributevalue">1.Pl.Pres.Ind</span>"&gt;</span>fahren<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">APPR</span>" <span class="attribute">msd</span>="<span class="attributevalue">--</span>"&gt;</span>in<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">ART</span>" <span class="attribute">msd</span>="<span class="attributevalue">Def.Masc.Akk.Sg</span>"&gt;</span>den<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">pos</span>="<span class="attributevalue">NN</span>" <span class="attribute">msd</span>="<span class="attributevalue">Masc.Akk.Sg</span>"&gt;</span>Urlaub<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;pc <span class="attribute">pos</span>="<span class="attributevalue">$.</span>" <span class="attribute">msd</span>="<span class="attributevalue">--</span>"&gt;</span>.<span class="element">&lt;/pc&gt;</span><br /><span class="element">&lt;/ab&gt;</span>
-                                      </pre>
-                                </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <section>
-                        <h2>Inline linguistic information in TEI</h2>
-                        <table class="attList" style="font-size:smaller">
-                            <tr>
-                                <td class="odd_label">join</td>
-                                <td class="odd_value">when present, provides information on whether
-                                    the token in question is adjacent to another, and if so, on
-                                    which side. </td>
-                                <td class="code">
-                                    <pre> 
-<span class="element">&lt;s&gt;</span><br /> <span class="element">&lt;pc <span class="attribute">join</span>="<span class="attributevalue">right</span>"&gt;</span>"<span class="element">&lt;/pc&gt;</span><br /> <span class="element">&lt;w <span class="attribute">join</span>="<span class="attributevalue">left</span>"&gt;</span>Friends<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w&gt;</span>will<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w&gt;</span>be<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;w <span class="attribute">join</span>="<span class="attributevalue">right</span>"&gt;</span>friends<span class="element">&lt;/w&gt;</span><br /> <span class="element">&lt;pc <span class="attribute">join</span>="<span class="attributevalue">both</span>"&gt;</span>.<span class="element">&lt;/pc&gt;</span><br /> <span class="element">&lt;pc <span class="attribute">join</span>="<span class="attributevalue">left</span>"&gt;</span>"<span class="element">&lt;/pc&gt;</span><br /><span class="element">&lt;/s&gt;</span>
-                                       </pre>
-                                </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <section>
-                        <h2>Feature structures: definition</h2>
+                        <h2>Specificity index</h2>
                         <ul>
-                            <li class="fragment">A group of <em>attribute:value</em> pairs, in which
-                                the values may be either atomic or composed by complex units in the
-                                form of nested feature structures </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Feature structures: example</h2>
-                        <div class="code">
-                            <pre> 
-<span class="element">&lt;fs <span class="attribute">type</span>="<span class="attributevalue">phonological_segments</span>"&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">consonantal</span>"&gt;</span><br />  <span class="element">&lt;binary <span class="attribute">value</span>="<span class="attributevalue">true</span>"/&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">vocalic</span>"&gt;</span><br />  <span class="element">&lt;binary <span class="attribute">value</span>="<span class="attributevalue">false</span>"/&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">voiced</span>"&gt;</span><br />  <span class="element">&lt;binary <span class="attribute">value</span>="<span class="attributevalue">false</span>"/&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">anterior</span>"&gt;</span><br />  <span class="element">&lt;binary <span class="attribute">value</span>="<span class="attributevalue">true</span>"/&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">coronal</span>"&gt;</span><br />  <span class="element">&lt;binary <span class="attribute">value</span>="<span class="attributevalue">true</span>"/&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">continuant</span>"&gt;</span><br />  <span class="element">&lt;binary <span class="attribute">value</span>="<span class="attributevalue">true</span>"/&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">strident</span>"&gt;</span><br />  <span class="element">&lt;binary <span class="attribute">value</span>="<span class="attributevalue">true</span>"/&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /><span class="element">&lt;/fs&gt;</span>
-                  </pre>
-                        </div>
-                    </section>
-                    <section>
-                        <h2>Feature structures: example</h2>
-                        <div class="code">
-                            <pre> 
-<span class="element">&lt;fs <span class="attribute">type</span>="<span class="attributevalue">word</span>"&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">surface</span>"&gt;</span><br />  <span class="element">&lt;string&gt;</span>love<span class="element">&lt;/string&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">syntax</span>"&gt;</span><br />  <span class="element">&lt;fs <span class="attribute">type</span>="<span class="attributevalue">category</span>"&gt;</span><br />   <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">pos</span>" <span class="attribute">fVal</span>="<span class="attributevalue">#V</span>"/&gt;</span><br />   <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">val</span>" <span class="attribute">fVal</span>="<span class="attributevalue">#TRNS</span>"/&gt;</span><br />  <span class="element">&lt;/fs&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /> <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">semantics</span>"&gt;</span><br />  <span class="element">&lt;fs <span class="attribute">type</span>="<span class="attributevalue">act</span>"&gt;</span><br />   <span class="element">&lt;f <span class="attribute">name</span>="<span class="attributevalue">rel</span>" <span class="attribute">fVal</span>="<span class="attributevalue">#LOVE</span>"/&gt;</span><br />  <span class="element">&lt;/fs&gt;</span><br /> <span class="element">&lt;/f&gt;</span><br /><span class="element">&lt;/fs&gt;</span>
- </pre>
-                        </div>
-                    </section>
-                    <section>
-                        <h2>Feature structures: definition</h2>
-                        <ul>
-                            <li>A group of <em>attribute:value</em> pairs, in which the values may
-                                be either atomic or composed by complex units in the form of nested
-                                feature structures </li>
-                            <li class="fragment">It stems from the structuralist framework of the
-                                Prague school and later developments</li>
-                            <li class="fragment">It can be considered a general type of data
-                                structure</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Feature structures (FS): advantages</h2>
-                        <ul>
-                            <li class="fragment">Reusability mechanisms (e.g. shared features)</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <img src="images/fs-reuse.png" alt="example FS" />
-                    </section>
-                    <section>
-                        <h2>Feature structures (FS): advantages</h2>
-                        <ul>
-                            <li>Reusability mechanisms (e.g. shared features)</li>
-                            <li class="fragment">Means to document the implementation of a FS model
-                                in a structured way through the Feature System Declaration (FSD)<ul
-                                    class="fragment">
-                                    <li>Mechanism to define a well-formed and valid feature
-                                        structure, formalising its necessary components together
-                                        with other types of constraints, and declaring all the
-                                        feature names and values</li>
-                                </ul></li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Feature System Declaration: example </h2>
-                        <img src="images/fsd.png" alt="FSD example" />
-                    </section>
-                    <section>
-                        <h2>Feature structures (FS): advantages</h2>
-                        <ul>
-                            <li>Reusability mechanisms (e.g. shared features)</li>
-                            <li>Means to document the implementation of a FS model in a structured
-                                way through the Feature System Declaration (FSD)<ul>
-                                    <li>Mechanism to define a well-formed and valid feature
-                                        structure, formalising its necessary components together
-                                        with other types of constraints, and declaring all the
-                                        feature names and values</li>
-                                </ul></li>
-                            <li class="fragment">Straightforward transformation to other data modals
-                                (e.g. RDF)</li>
-                            <li class="fragment">Adoption as an ISO Standard</li>
+                            <li>Measure of the probability that a particular form appears in a
+                                corpus partition</li>
+                            <li>Software: <a href="https://txm.gitpages.huma-num.fr/textometrie/en/"
+                                    target="_blank">TXM</a></li>
                         </ul>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h1>Implementation example</h1>
+                        <h1>Results</h1>
                     </section>
                     <section>
-                        <h3>Digital workstation for the analysis of linguistic variation across
-                            witnesses</h3>
+                        <h2>Distinctive lexicon</h2>
+                        <ul>
+                            <li>Zeta will <em>always</em> provide results</li>
+                            <li>Comparison of the results obtain with a random sample and with the
+                                distinction F/M: significant values of the later</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Stereotyped distribution?</h2>
+                        <p class="left"> Weidman & O’Sullivan (2018) (novels, EN, 1840s–1990s):</p>
+                        <ul class="wordLists">
+                            <li>High frequencies in the female corpus: <ul>
+                                    <li>private/immediate space: <em>home, kitchen, church, hallway,
+                                            school; door, window, chair, stairs, curtains, garden,
+                                            room </em></li>
+                                    <li>positioning in relation to the body: <em>hair, fingers,
+                                            skin, eyes, heart, face, cheeks, dress, gown </em></li>
+                                    <li>less certainty/confidence: <em>seemed, perhaps, believed,
+                                            scarcely, likely </em></li>
+                                    <li>interaction: <em> laughed, spoke, saying, talking,
+                                            exclaimed, paused, thank, asked, interrupted </em></li>
+                                </ul></li>
+                            <li>High frequencies in the male corpus: <ul>
+                                    <li>broad space: <em>country, earth, city, town, world</em></li>
+                                    <li>directional language: <em>east, west, south, north, center,
+                                            upward, beyond, forth</em>
+                                    </li>
+                                    <li>travel: <em>airplane, car, traffic, miles, speed</em></li>
+                                    <li>more certainty/confidence: <em>exactly, absolutely,
+                                            declared, therefore </em></li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/zeta-sd0.svg" alt="zeta sd0" />
+                    </section>
+                    <section>
+                        <img src="images/zeta-eg.svg" alt="zeta sd2" />
+                    </section>
+                    <section>
+                        <h2>Distinctive semantic fields</h2>
+                        <p class="left">Distinctive lexicon in the female corpus: 
+                        <ul class="wordList">
+                            <li>Family relations: <em>hermano, criatura, niño, marido,
+                                madre</em></li>
+                            <li>Body parts: <em>cabello, semblante, seno, vestido</em></li>
+                            <li><em>Dicendi</em> verbs and interaction language: <em><span
+                                        style="color:gray">exclamar</span>, murmurar, notar,
+                                    responder </em></li>
+                            <li>Nature: <em>flor, sol, pájaro, rama, hoja, rayo, planta, árbol,
+                                    cielo, tierra, viento, ave </em></li>
+                            <li>Emotion words: <em>felicidad, dichoso, alegre, melancólico,
+                                    gracioso, sufrir, placer, apacible </em></li>
+                            <li>Adjectives: <em>bello, dulce, lindo, suave, sombrío, severo, oscuro,
+                                    azul, amargo, delicado, elegante</em></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Distinctive semantic fields</h2>
+                        <p class="left">Distinctive lexicon in the male corpus: 
+                        <ul class="wordList">
+                            <li>Spatial words: <em>plaza, calle, dentro, fuera, encima, portal,
+                                    arriba, balcón</em></li>
+                            <li>Action description: <em>comenzar, ocurrir, inmediato,
+                                    inmediatamente, acto, resultar, siguiente, continuar, averiguar,
+                                    resultado</em></li>
+                            <li>Professional domain: <em>noticia, asunto, negocio, cabo, soldado,
+                                    público, ministro, empresa, espada, capital </em></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Epistemic adverbs and adjectives</h2>
+                        <p class="left">Previous studies:</p>
+                        <ul>
+                            <li>Pennebaker (2011: 40): women use more certainty words
+                                    (<em>always</em>, <em>absolutely)</em></li>
+                            <li>Weidman & O’Sullivan (2018): <blockquote> While males throughout all
+                                    sets have markers distinctly related to language of certainty
+                                    and confidence—‘exactly’, ‘absolutely’, ‘declared’, and
+                                    ‘therefore’—female markers remain throughout all sets trending
+                                    toward language of less confidence, uncertainty (or at least
+                                    less certainty), and doubt—‘seemed’, ‘perhaps’, ‘believed’,
+                                    ‘scarcely’, and ‘likely’. </blockquote></li>
+                        </ul>
+                    </section>
+                    <section>
                         <figure>
-                            <img src="images/tese-home-page.png" alt="home page tese" />
-                            <figcaption>
-                                <a href="http://gl-pt.obdurodon.org/"
-                                    >http://gl-pt.obdurodon.org/</a>
-                            </figcaption>
+                            <img src="images/epistemic.svg" alt="epistemic chart" />
+                            <figcaption>Specificity of certain epistemic adj/adv in the F
+                                corpus</figcaption>
                         </figure>
                     </section>
                     <section>
-                        <table>
-                            <tr>
-                                <th>Goals</th>
-                                <th>Methods</th>
-                            </tr>
-                            <tr>
-                                <td>Gain new knowledge about the Galician-Portuguese lyric
-                                    manuscript tradition from the systematic analysis of linguistic
-                                    variation phenomena between witnesses </td>
-                                <td>
-                                    <ul>
-                                        <li>Data modelling and standardisation: from DOCX to a
-                                            TEI-XML edition</li>
-                                        <li>Automatic collation</li>
-                                        <li>Interface development (interface as part of the
-                                            philological discourse)</li>
-                                        <li>Statistical analysis</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                        <div class="logo">
-                            <img src="../images/github.png" alt="github logo" />
-                            <a href="https://github.com/HelenaSabel/variatio_delectat"
-                                >https://github.com/HelenaSabel/variatio_delectat</a>
-                        </div>
-                    </section>
-                    <section>
-                        <h2>The manuscript tradition</h2>
-                        <img src="images/stemma.png" alt="stemma " />
-                    </section>
-                    <section>
-                        <h2>Metadata for each <em>cantiga</em></h2>
+                        <h2>The period signal</h2>
                         <ul>
-                            <li>Author</li>
-                            <li>For each witness<ul>
-                               
-                                    <li>Location in the manuscript</li>
-                                    <li>Copyist</li>
+                            <li>Previous studies show the preponderance of the period variable (e.g.
+                                Stamou 2008; Hoover 2013)</li>
+                            <li>In this study, the lexicon of novels from 1840–1859 (T1) in relation
+                                to 1900–1919 (T4) is more distinct than the gender partition </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/zeta_T4-T1-sd0.svg" alt="zeta period" />
+                    </section>
+                    <section>
+                        <img src="images/zeta_T4-T1-sd2.svg" alt="zeta period" />
+                    </section>
+                    <section>
+                        <h2>The <em>vos / usted</em> distribution</h2>
+                        <ul>
+                            <li>Theoretical framework: <ul>
+                                    <li><strong>Principle I</strong>: For stable sociolinguistic
+                                        variables, men use a higher frequency of nonstandard forms
+                                        than women (Labov 1990: 210) </li>
+                                    <li><strong>Principle Ia</strong>: in change from above, women
+                                        favor the incoming prestige form more than men (Labov 1990:
+                                        213) </li>
                                 </ul></li>
+                            <li>Hypothesis: women will first use <em>usted</em> and with a higher
+                                frequency than <em>vos</em> (cfr. Blayer 2001) </li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Author metadata</h2>
-                        <ul>
-                            <li>Name</li>
-                            <li>“Nationality”</li>
-                            <li>Geographic provenance</li>
-                            <li>Troubadour or minstrel</li>
-                            <li>Social status (e.g. nobleman, knight, clergyman, squire)</li>
-                            <li>
-                                <em>floruit</em>
-                                <ul>
-                                    <li>period</li>
-                                    <li>location (court)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Encoding of variants</h2>
-                        <ul>
-                            <li>Every locus of variation is encoded using the <a
-                                    href="https://tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS"
-                                    >parallel-segmentation method</a></li>
-                        </ul>
-                        <img src="images/app1.png" alt="apparatus" class="fragment" />
-                    </section>
-                    <section>
-                        <h2>Encoding of variants</h2>
-                        <ul>
-                            <li>Every <em>locus</em> of variation has a reference to an entry (FS) of a variant taxonomy
-                            </li>
-                        </ul>
-                        <img src="images/app2.png" alt="apparatus" class="fragment" />
-                    </section>
-                    <section>
-                        <img src="images/fs-ex.png" alt="fs example"/>
-                    </section>
-                    <section>
-                        <h2>Data retrieval and exploitation</h2>
-                        <img src="images/tese1.png" alt="screenshot thesis"/>
-                    </section>
-                    <section>
-                        <h2>Data retrieval and exploitation</h2>
-                        <img src="images/tese2.png" alt="screenshot thesis"/>
-                    </section>
-                    <section>
-                        <h2>Data retrieval and exploitation</h2>
-                        <img src="images/tese5.png" alt="screenshot thesis"/>
-                    </section>
-                    <section>
-                        <h2>Data retrieval and exploitation</h2>
-                        <img src="images/tese6.png" alt="screenshot thesis"/>
+                        <figure>
+                            <img src="images/usted-vos_T1.svg" alt="usted/vos T1" />
+                            <figcaption>Specificity <em>usted/vos</em> for the period 1840–1859 in
+                                the female corpus</figcaption>
+                        </figure>
                     </section>
                 </section>
                 <section>
-                 <section>   <h1>Final remarks</h1></section>
+                    <section>
+                        <h1>Conclusions</h1>
+                    </section>
+                    <section>
+                        <h2>Limitations and future work</h2>
+                        <ul>
+                            <li>The results of the automatic annotation need to be improved</li>
+                            <li>The relevance of the novel subgenre needs to be evaluated (e.g.
+                                historical novel). Cfr. Woolf (1967): <blockquote
+                                    style="font-size:smaller"> Had she been born in 1827, Dorothy
+                                    Osborne would have written novels; had she been born in 1527,
+                                    she would never have written at all. But she was born in 1627,
+                                    and [...] there was nothing unseemly in writing a letter
+                                </blockquote>
+                            </li>
+                            <li>Need to isolate direct-speech instances.</li>
+                            <li>Gender and social analysis of
+                                character and narration voices (speech characterisation by social parameters?)</li>
+                        </ul>
+                    </section>
                     <section>
                         <h2>Conclusions</h2>
                         <ul>
-                            <li class="fragment">Although “pure” stand-off annotation methods present multiple advantanges for adding layers of linguistic annotation, it might not always be the most appropriate technique
-                            <ul>
-                                <li class="fragment">Stand-off through URIs instead of character offsets</li>
-                            </ul></li>
-                            <li class="fragment">Feature structures as a data model to formalise different and heterogeneous linguistic phenomena</li>
+                            <li>Stastical measures can be used to carry out sociolinguistic studies
+                                within literary corpora</li>
+                            <li>Similarities with certain trends observed in English</li>
+                            <li>Relevance of the period variable: influenced by genre?</li>
                         </ul>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h1>Danke!</h1>
+                        <h3>Bibliographic references</h3>
+                        <ul style="font-size:smaller">
+                            <li>Blayer, I. M. F. (2001). Las formas de tratamiento en el español
+                                peninsular: Un estudio diacrónico. Signum: Estudos da Linguagem,
+                                4(1), Art. 1. <a
+                                    href="https://doi.org/10.5433/2237-4876.2001v4n1p27"
+                                    >doi:10.5433/2237-4876.2001v4n1p27</a>
+                            </li>
+                            <li>Burrows, J. (2007). All the Way Through: Testing for Authorship in
+                                Different Frequency Strata. Literary and Linguistic Computing,
+                                22(1), 27-47. <a href="https://doi.org/10.1093/llc/fqi067"
+                                    >doi:10.1093/llc/fqi067</a></li>
+                            <li>Labov, W. (1990). The intersection of sex and social class in the
+                                course of linguistic change. Language Variation and Change, 2(2),
+                                205-254. <a href="https://doi.org/10.1017/S0954394500000338"
+                                    >doi:10.1017/S0954394500000338</a></li>
+                            <li>Lafon, P. (1984). Dépouillements et statistiques en lexicométrie.
+                                Slatkine. </li>
+                            <li>Schöch, C., Schlör, D., Zehe, A., Gebhard, H., & Becker, M. (2018).
+                                Burrows’ Zeta: Exploring and evaluating variants and parameters. DH
+                                2018. <a
+                                    href="https://dh2018.adho.org/burrows-zeta-exploring-and-evaluating-variants-and-parameters"
+                                    >[Link]</a>
+                            </li>
+                            <li>Weidman, S. G., & O’Sullivan, J. (2018). The limits of distinctive
+                                words: Re-evaluating literature’s gender marker debate. Digital
+                                Scholarship in the Humanities, 33(2), 374-390. <a
+                                    href="https://doi.org/10.1093/llc/fqx017"
+                                    >doi:10.1093/llc/fqx017</a>
+                            </li>
+                            <li>Woolf, V. (1967). Dorothy Osborne’s Letters. Collected Essays (pp.
+                                3-60). Chatto & Windus. </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>Thank you!</h1>
                         <div>
                             <p>
                                 <a href="https://helenasabel.github.io/"
@@ -513,7 +512,6 @@
         <script src="plugin/markdown/markdown.js"></script>
         <script src="plugin/highlight/highlight.js"></script>
         <script src="plugin/pointer/pointer.js"></script>
-        
         <script>
             // More info about initialization & config:
             // - https://revealjs.com/initialization/
