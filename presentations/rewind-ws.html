@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>H. Bermúdez Sabel -- In search of the gender signal: introduction to stylometric
+            approaches</title>
+        <link rel="stylesheet" href="dist/reset.css" />
+        <link rel="stylesheet" href="dist/reveal.css" />
+        <link rel="stylesheet" href="dist/theme/white.css" />
+        <link rel="stylesheet" href="css/pres.css" />
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+        <link rel="stylesheet" href="plugin/pointer/pointer.css" />
+        <style>
+            .wordLists em {
+                font-size: smaller}
+            .left {
+                text-align: left;
+            }
+            .code pre {
+                width: 100%
+            }
+            .code {
+                font-family: monospace;
+            }
+            .element {
+                color: darkblue}
+            .attribute {
+                color: darkorange}
+            .attributevalue {
+                color: maroon}
+            .odd_label {
+                font-weight: bold}
+            
+            .logo {
+                margin-top: 0.5em;
+                display: flex;
+                align-items: center;
+                justify-content: center}
+            .logo img {
+                height: 1.5em;
+                margin: 0 0.5em 0 0}
+            li > span {
+                font-weight: 600}</style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <section>
+                        <h2>In search of the gender signal: introduction to stylometric
+                            approaches</h2>
+                        <p>
+                            <strong>Helena Bermúdez Sabel</strong>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Outline</h2>
+                        <ul>
+                            <li>Presentation of an exploratory research question concerning the
+                                linguistic identification of the gender signal</li>
+                            <li class="style:margin-top:2em;">Introduction to textual analysis using
+                                TXM</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Outline</h2>
+                        <ul>
+                            <li>Presentation of an exploratory research question <ul>
+                                    <li>Rationale</li>
+                                    <li>Methodology</li>
+                                    <li>Results <ul>
+                                            <li>Distinctive lexicon</li>
+                                            <li>Epistemic adverbs and adjectives</li>
+                                            <li>Distribution <em>usted/vos</em></li>
+                                        </ul></li>
+                                    <li>Conclusions</li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Rationale</h1>
+                    </section>
+                    <section>
+                        <h2>Sociolinguistics and written corpora</h2>
+                        <ul>
+                            <li>Scarcity of sociolinguistic studies focused on written corpora
+                                (outside of diatopic studies)</li>
+                            <li>Importance of describing the linguistic register used in writing,
+                                including literary writing</li>
+                            <li>Literary corpora and exploitation of certain social parameters like
+                                gender. Advantages: <ul>
+                                    <li>Known sociologic profile</li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Research question</h2>
+                        <p>What new knowledge concerning gender-based linguistic variation can we
+                            gain through statistical methods?</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Methodology</h1>
+                    </section>
+                    <section>
+                        <h2>Corpus</h2>
+                        <ul>
+                            <li>Source: <a href="https://www.distant-reading.net/eltec/"
+                                    target="_blank">European Literary Text Collection
+                                (ELTeC)</a></li>
+                            <li>Exclusion of authors with a strong relation with America</li>
+                            <li>Corpus: 86 novels (1840–1919) <ul>
+                                    <li>22 novels by women</li>
+                                    <li>7,380,761 words (20% by women)</li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Zeta</h2>
+                        <ul>
+                            <li>Comparison of two groups of texts (G1 and G2) <ul>
+                                    <li>For each group, extraction a number of segments of fixed
+                                        size</li>
+                                    <li>For each term (t) in the vocabulary (e.g. lemmas), the
+                                        segment proportions (ps) of each group in which the term
+                                        appears at least once (binarization) are calculated </li>
+                                    <li>Zeta is the result of subtracting the two proportions</li>
+                                </ul></li>
+                        </ul>
+                        <img src="images/zeta.png" alt="zeta formula" />
+                        <br />
+                        <ul class="left" style="display:block">
+                            <li>Software: <a href="https://github.com/cligs/pyzeta" target="blank"
+                                    >pyzeta</a> (Schöch 2017)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Zeta variants</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td style="border:0"></td>
+                                    <td colspan="2">
+                                        <strong>Segment proportion</strong>
+                                    </td>
+                                    <td colspan="2">
+                                        <strong>Relative frequencies</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>substraction</strong>
+                                    </td>
+                                    <td>sd0</td>
+                                    <td>sd2</td>
+                                    <td>sr0</td>
+                                    <td>sr2</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>division</strong>
+                                    </td>
+                                    <td>dd0</td>
+                                    <td>dd2</td>
+                                    <td>dr0</td>
+                                    <td>dr2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Zeta variants</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td style="border:0"></td>
+                                    <td colspan="2">
+                                        <strong>Segment proportion</strong>
+                                    </td>
+                                    <td colspan="2">
+                                        <strong>Relative frequencies</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>substraction</strong>
+                                    </td>
+                                    <td style="background-color:lightgrey">sd0</td>
+                                    <td>sd2</td>
+                                    <td>sr0</td>
+                                    <td>sr2</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>division</strong>
+                                    </td>
+                                    <td>dd0</td>
+                                    <td>dd2</td>
+                                    <td>dr0</td>
+                                    <td>dr2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Burrows (2007)</p>
+                    </section>
+                    <section>
+                        <h2>Zeta variants</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td style="border:0"></td>
+                                    <td colspan="2">
+                                        <strong>Segment proportion</strong>
+                                    </td>
+                                    <td colspan="2">
+                                        <strong>Relative frequencies</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                    <td>
+                                        <em>normal</em>
+                                    </td>
+                                    <td>
+                                        <em>log2</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>substraction</strong>
+                                    </td>
+                                    <td>sd0</td>
+                                    <td style="background-color:lightgrey">sd2</td>
+                                    <td>sr0</td>
+                                    <td>sr2</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>division</strong>
+                                    </td>
+                                    <td>dd0</td>
+                                    <td>dd2</td>
+                                    <td>dr0</td>
+                                    <td>dr2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Schöch et al. (2018)</p>
+                    </section>
+                    <section>
+                        <h2>Specificity index</h2>
+                        <ul>
+                            <li>Measure of the probability that a particular form appears in a
+                                corpus partition according to Lafon (1984)</li>
+                            <li>Software: <a href="https://txm.gitpages.huma-num.fr/textometrie/en/"
+                                    target="_blank">TXM</a></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Results</h1>
+                    </section>
+                    <section>
+                        <h2>Distinctive lexicon</h2>
+                        <ul>
+                            <li>Zeta will <em>always</em> provide results</li>
+                            <li>Comparison of the results obtained with a random sample and with the
+                                distinction F/M: significant values of the later</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Stereotyped distribution?</h2>
+                        <p class="left">Rybicki (2015) (novels, EN, 18th c.–early 19th c.):</p>
+                        <ul class="wordLists">
+                            <li>Distinct words of the female corpus: <ul>
+                                    <li>emotion words: <em>feeling, anxious, alone, painful,
+                                            anxiety, attention, beautiful, surprise, kindness,
+                                            regret, agony, alarm, extreme, lovely, attached,
+                                            interested, surprised,</em> etc.</li>
+                                    <li>exclamations and interjections: <em>exclaimed, oh, yes, ah,
+                                            cried</em></li>
+                                    <li>society and family: <em>society, manners, ma, elegant, form,
+                                            residence, circumstance, accompanied</em></li>
+                                </ul>
+                            <li>Distinct words of the male corpus: <ul>
+                                    <li>virtues: <em>help, honest, honour, favour, forgive, deserve,
+                                            merit, order, reputation, quality</em></li>
+                                    <li>body parts: <em>mouth, nose</em></li>
+                                    <li><span style="font-style:italic">dicendi</span> verbs for
+                                        swearing: <em>cursed, swore</em></li>
+                                    <li>archaisms: <em>hath, thou, thee, thy, dost, hast, tis, doth,
+                                            wilt, methinks, nay</em></li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Stereotyped distribution?</h2>
+                        <p class="left"> Weidman & O’Sullivan (2018) (novels, EN, 1840s–1990s):</p>
+                        <ul class="wordLists">
+                            <li>Distinct words of the female corpus: <ul>
+                                    <li>private/immediate space: <em>home, kitchen, church, hallway,
+                                            school; door, window, chair, stairs, curtains, garden,
+                                            room </em></li>
+                                    <li>positioning in relation to the body: <em>hair, fingers,
+                                            skin, eyes, heart, face, cheeks, dress, gown </em></li>
+                                    <li>less certainty/confidence: <em>seemed, perhaps, believed,
+                                            scarcely, likely </em></li>
+                                    <li>interaction: <em> laughed, spoke, saying, talking,
+                                            exclaimed, paused, thank, asked, interrupted </em></li>
+                                </ul></li>
+                            <li>Distinct words of the male corpus: <ul>
+                                    <li>broad space: <em>country, earth, city, town, world</em></li>
+                                    <li>directional language: <em>east, west, south, north, center,
+                                            upward, beyond, forth</em>
+                                    </li>
+                                    <li>travel: <em>airplane, car, traffic, miles, speed</em></li>
+                                    <li>more certainty/confidence: <em>exactly, absolutely,
+                                            declared, therefore </em></li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/zeta-sd0.svg" alt="zeta sd0" />
+                    </section>
+                    <section>
+                        <img src="images/zeta-eg.svg" alt="zeta sd2" />
+                    </section>
+                    <section>
+                        <h2>Distinctive semantic fields</h2>
+                        <p class="left">Distinctive lexicon in the female corpus: 
+                        <ul class="wordLists">
+                            <li>Nature: <em>flor, sol, pájaro, rama, hoja, rayo, planta, árbol,
+                                    cielo, tierra, viento, ave </em></li>
+                            <li><span class="underline">Family relations</span>: <em>hermano,
+                                    criatura, niño, marido, madre</em></li>
+                            <li><span class="underline">Body parts</span>: <em>cabello, semblante,
+                                    seno, vestido</em></li>
+                            <li><span class="underline"><span style="font-style:italic"
+                                        >Dicendi</span> verbs and interaction language</span>:
+                                        <em><span style="color:gray">exclamar</span>, murmurar,
+                                    notar, responder </em></li>
+                            <li><strong>Emotion words</strong>: <em>felicidad, dichoso, alegre,
+                                    melancólico, gracioso, sufrir, placer, apacible </em></li>
+                            <li>Adjectives: <em>bello, dulce, lindo, suave, sombrío, severo, oscuro,
+                                    azul, amargo, delicado, elegante</em></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="images/pos.svg" alt="pos chart" />
+                            <figcaption>Specificity of the 4 highest/lowest PoS in the F
+                                corpus</figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <h2>Distinctive semantic fields</h2>
+                        <p class="left">Distinctive lexicon in the male corpus: 
+                        <ul class="wordLists">
+                            <li><span class="underline">Spatial words</span>: <em>plaza, calle,
+                                    dentro, fuera, encima, portal, arriba, balcón</em></li>
+                            <li>Action description: <em>comenzar, ocurrir, inmediato,
+                                    inmediatamente, acto, resultar, siguiente, continuar, averiguar,
+                                    resultado</em></li>
+                            <li>Professional domain: <em>noticia, negocio, cabo, soldado, público,
+                                    ministro, empresa, espada, capital </em></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Epistemic adverbs and adjectives</h2>
+                        <p class="left">Previous studies:</p>
+                        <ul>
+                            <li>Pennebaker (2011: 40): women use more certainty words
+                                    (<em>always</em>, <em>absolutely)</em></li>
+                            <li>Weidman & O’Sullivan (2018): <blockquote> While males throughout all
+                                    sets have markers distinctly related to language of certainty
+                                    and confidence—‘exactly’, ‘absolutely’, ‘declared’, and
+                                    ‘therefore’—female markers remain throughout all sets trending
+                                    toward language of less confidence, uncertainty (or at least
+                                    less certainty), and doubt—‘seemed’, ‘perhaps’, ‘believed’,
+                                    ‘scarcely’, and ‘likely’. </blockquote></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="images/epistemic.svg" alt="epistemic chart" />
+                            <figcaption>Specificity of certain epistemic adj/adv in the F
+                                corpus</figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <h2>The period signal</h2>
+                        <ul>
+                            <li>Previous studies show the preponderance of the period variable (e.g.
+                                Stamou 2008; Hoover 2013)</li>
+                            <li>In this study, the lexicon of novels from 1840–1859 (T1) in relation
+                                to 1900–1919 (T4) is more distinct than the gender partition </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/zeta_T4-T1-sd0.svg" alt="zeta period" />
+                    </section>
+                    <section>
+                        <img src="images/zeta_T4-T1-sd2.svg" alt="zeta period" />
+                    </section>
+                    <section>
+                        <h2>The <em>vos / usted</em> distribution</h2>
+                        <ul>
+                            <li>Theoretical framework: <ul>
+                                    <li><strong>Principle I</strong>: For stable sociolinguistic
+                                        variables, men use a higher frequency of nonstandard forms
+                                        than women (Labov 1990: 210) </li>
+                                    <li><strong>Principle Ia</strong>: in change from above, women
+                                        favor the incoming prestige form more than men (Labov 1990:
+                                        213) </li>
+                                </ul></li>
+                            <li>Hypothesis: women will first use <em>usted</em> and with a higher
+                                frequency than <em>vos</em> (cfr. Blayer 2001) </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="images/usted-vos_T1.svg" alt="usted/vos T1" />
+                            <figcaption>Specificity <em>usted/vos</em> for the period 1840–1859 in
+                                the female corpus</figcaption>
+                        </figure>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Conclusions</h1>
+                    </section>
+                    <section>
+                        <h2>Limitations and future work</h2>
+                        <ul>
+                            <li>The results of the automatic annotation need to be improved</li>
+                            <li>The relevance of the novel subgenre needs to be evaluated (e.g.
+                                historical novel). Cfr. Woolf (1967): <blockquote
+                                    style="font-size:smaller"> Had she been born in 1827, Dorothy
+                                    Osborne would have written novels; had she been born in 1527,
+                                    she would never have written at all. But she was born in 1627,
+                                    and [...] there was nothing unseemly in writing a letter
+                                </blockquote>
+                            </li>
+                            <li>Need to isolate direct-speech instances</li>
+                            <li>Gender and social analysis of character and narration voices (speech
+                                characterisation by social parameters?)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Conclusions</h2>
+                        <ul>
+                            <li>Stastical measures can be used to carry out sociolinguistic studies
+                                within literary corpora</li>
+                            <li>Similarities with certain trends observed in English</li>
+                            <li>Relevance of the period variable: influenced by genre?</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Introduction to textual analysis using TXM</h1>
+                    </section>
+                    <section>
+                        <h2>Goals</h2>
+                        <ul>
+                            <li>Learn some of the basic functionalities of TXM for textual analysis:
+                                        <ul><li>cooccurrences</li>
+                                    <li>specificity index</li>
+                                    <li>creation of partitions and subcorpora</li></ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Progression analysis</h2>
+                        <ul>
+                            <li>Global visualisation of a development (corpus analysed as a
+                                    <em>continuum</em>). It enables the quantitative evolution of a
+                                word/collocation, for instance, through time. </li>
+                            <li>Results presented as a cumulative chart (need to interpret the slope
+                                of the curve) </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="images/progression.png" alt="progression analysis" />
+                            <figcaption>Results of the progression of lemmas <code>comunis.*</code>
+                                and <code>capitalis.*</code></figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <h2>Specificity index</h2>
+                        <ul>
+                            <li>Based on the formula by Lafon (1984): <ul>
+                                    <li> Lafon, P. (1984). <em>Dépouillements et statistiques en
+                                            lexicométrie</em>. Genève, Paris: Slatkine. </li>
+                                </ul>
+                            </li>
+                            <li>It can be used to show the specificity of a cooccurrence or to
+                                characterise a corpus partition </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="images/specificity.png" alt="specificity index" />
+                            <figcaption>Visualization of the specificity of the word
+                                    <em>progrès</em> in a corpus of French presidents’ speeches
+                                (partitioned by author)</figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <h2>Factorial analyses</h2>
+                        <ul>
+                            <li>Cartographic representation of the distribution of a specific
+                                property across partitions</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="images/factorial.png" alt="Factorial analysis" />
+                            <figcaption>Factorial analysis of lemma frequencies by
+                                period</figcaption>
+                        </figure>
+                    </section>
+                </section>
+                <section>
+                    <h2>To learn more</h2>
+                    <ul>
+                        <li>
+                            <a href="https://helenasabel.github.io/corpus_development/">
+                                <em>Digital corpus building for humanities research. From data
+                                    collection, to annotation, exploitation and sharing</em>
+                            </a>. Bermúdez Sabel (May 2023)</li>
+                        <li>Very fast introduction to TXM key concepts in 90 minutes: <a
+                                href="https://sourceforge.net/projects/txm/files/documentation/Tutorial%20A%20Gentle%20Introduction%20To%20TXM%20Key%20Concepts%20In%20One%20And%20An%20Half%20Hour.pdf/download"
+                                target="_blank">PDF</a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://groupes.renater.fr/wiki/txm-users/public/tutoriel_europresse"
+                                target="_blank">Import of Europresse articles in XML/w+CSV to
+                                TXM</a>
+                        </li>
+                        <li>
+                            <a href="https://txm.gitpages.huma-num.fr/textometrie/en/Documentation/"
+                                target="_blank">List of manuals and resources in the TXM portal</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h3>Cited references</h3>
+                        <ul>
+                            <li>Blayer, I. M. F. (2001). Las formas de tratamiento en el español
+                                peninsular: Un estudio diacrónico. <em>Signum: Estudos da
+                                    Linguagem</em>, 4(1), Art. 1. <a
+                                    href="https://doi.org/10.5433/2237-4876.2001v4n1p27"
+                                    >doi:10.5433/2237-4876.2001v4n1p27</a>
+                            </li>
+                            <li>Burrows, J. (2007). All the Way Through: Testing for Authorship in
+                                Different Frequency Strata. Literary and Linguistic Computing,
+                                22(1), 27-47. <a href="https://doi.org/10.1093/llc/fqi067"
+                                    >doi:10.1093/llc/fqi067</a></li>
+                            <li>Labov, W. (1990). The intersection of sex and social class in the
+                                course of linguistic change. <em>Language Variation and Change</em>,
+                                2(2), 205-254. <a href="https://doi.org/10.1017/S0954394500000338"
+                                    >doi:10.1017/S0954394500000338</a></li>
+                            <li>Lafon, P. (1984). <em>Dépouillements et statistiques en
+                                    lexicométrie</em>. Slatkine. </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Cited references</h3>
+                        <ul>
+                            <li>Schöch, C., Schlör, D., Zehe, A., Gebhard, H., & Becker, M. (2018).
+                                Burrows’ Zeta: Exploring and evaluating variants and parameters.
+                                    <em>DH 2018</em>. <a
+                                    href="https://dh2018.adho.org/burrows-zeta-exploring-and-evaluating-variants-and-parameters"
+                                    >[Link]</a>
+                            </li>
+                            <li>Weidman, S. G., & O’Sullivan, J. (2018). The limits of distinctive
+                                words: Re-evaluating literature’s gender marker debate. <em>Digital
+                                    Scholarship in the Humanities</em>, 33(2), 374–90. <a
+                                    href="https://doi.org/10.1093/llc/fqx017"
+                                    >doi:10.1093/llc/fqx017</a>
+                            </li>
+                            <li>Woolf, V. (1967). Dorothy Osborne’s Letters. Collected Essays (pp.
+                                3-60). Chatto & Windus. </li>
+                            <li>Rybicki, J, (2016). <em>Vive la différence</em>: Tracing the
+                                (Authorial) Gender Signal by Multivariate Analysis of Word
+                                Frequencies’. <em>Digital Scholarship in the Humanities</em>, 31(4),
+                                746–61. <a href="https://doi.org/10.1093/llc/fqv023"
+                                    >doi:10.1093/llc/fqv023</a>. </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>Thank you!</h1>
+                        <div>
+                            <p>Slides: <a
+                                    href="https://helenasabel.github.io/presentations/rewind-ws.html"
+                                    >https://helenasabel.github.io/presentations/rewind-ws.html</a></p>
+                            <p>
+                                <a href="https://helenasabel.github.io/"
+                                    >https://helenasabel.github.io/</a>
+                            </p>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/pointer/pointer.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+                
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins:[RevealMarkdown, RevealHighlight, RevealPointer, RevealNotes], slideNumber: 'c'
+            });</script>
+    </body>
+</html>
