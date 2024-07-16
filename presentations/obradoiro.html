@@ -16,7 +16,7 @@ layout: default
         <h2>2. Programas a descargar no inicio da sesión</h2>
         <ol>
             <li><a href="https://github.com/eeditiones/tei-publisher-app" target="_blank">TEI Publisher</a></li>
-            <li>Extensións de Visual Studio Code;
+            <li>Extensións recomendadas para Visual Studio Code:
                 <ul>
                     <li><a href="https://marketplace.visualstudio.com/items?itemName=e-editiones.tei-publisher-vscode">TEI Publisher Extension for Visual Studio Code</a></li>
                     <li><a href="https://marketplace.visualstudio.com/items?itemName=raffazizzi.sxml">Scholarly XML</a></li>
@@ -29,13 +29,13 @@ layout: default
             <li>Rosalía de Castro (1864): <em>Contos da miña terra</em> [<a href="https://gl.wikisource.org/wiki/Contos_da_mi%C3%B1a_terra" target="_blank">Wikisource</a>]</li>
             <li>Documentos e imaxes para utilizar no <a href="../assets/ws.zip">exercicio práctico</a></li>
         </ol>
-        <h2>Exercico práctico: edición dixital de <em>Contos da miña terra</em></h2>
+        <h2>Exercicio práctico: edición dixital de <em>Contos da miña terra</em></h2>
         <ol>
           <li>Abre Visual Studio Code. Preme <code>Ctrl + Shift + P</code> e escribe no caixa de texto: <code>dev containers</code>. Selecciona a opción <code>Dev containers: Open Folder in Container...</code></li>  
           <li>Selecciona o cartafol que descargaches no punto 2.1</li>
           <li>Cando remate de cargar, vai ao enderezo <a href="localhost:8080/exist/apps/dashboard">http://localhost:8080localhost:8080/exist/apps/dashboard</a></li>
             <li>Prepara un documento de Microsoft Word que conteña o texto de <em>Contos da miña terra</em> tirado de <a href="https://gl.wikisource.org/wiki/Contos_da_mi%C3%B1a_terra" target="_blank">Wikisource</a> </li>
-            <li>Engade estilos para anotar o documento. Isto xerará elementos TEI ao importar o arquivo. Por exemplo, para crear unha edición paralela texto-facsímile necesitamos marcar o inicio de cada páxina. Crea o estilo <code>tei:pb</code> e vai engadindo
+            <li>Engade estilos para anotar o documento, seguindo a convención <code>tei:<em>nome-elemento</em></code>. Isto xerará elementos TEI con ese nome ao importar o arquivo. Por exemplo, para crear unha edición paralela texto-facsímile necesitamos marcar o inicio de cada páxina. Crea o estilo <code>tei:pb</code> e vai engadindo
                 <code>&lt;n="01"></code> nese estilo cada vez que comece unha nova páxina (en 3.3 descargaches unha carpeta con todas as páxinas do facsímile).
                 Durante a importación do documento, esa anotación converterase nun elemento <code>&lt;pb n="01"/></code> (cf. <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html</a>). 
                 Utilizaremos o valor do atributo <span class="attribute">@n</span> para facer a referencia ás imaxes.</li>
