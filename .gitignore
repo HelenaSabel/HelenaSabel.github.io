@@ -7,3 +7,4 @@ presentations/gulpfile.js
 presentations/*.json
 presentations/examples
 presentations/entretien.html
+assets/ws

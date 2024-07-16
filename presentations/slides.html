@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>H. Bermúdez Sabel -- Edición dixital sen estrés tecnolóxico: das fontes á web</title>
+        <link rel="stylesheet" href="dist/reset.css" />
+        <link rel="stylesheet" href="dist/reveal.css" />
+        <link rel="stylesheet" href="dist/theme/white.css" />
+        <link rel="stylesheet" href="css/pres.css" />
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+        <link rel="stylesheet" href="plugin/pointer/pointer.css" />
+        <style>
+            .wordLists em {
+                font-size: smaller}
+            .left {
+                text-align: left;
+            }
+            .code pre {
+                width: 100%
+            }
+            .code {
+                font-family: monospace;
+            }
+            .element {
+                color: darkblue}
+            .attribute {
+                color: darkorange}
+            .attributevalue {
+                color: maroon}
+            .odd_label {
+                font-weight: bold}
+            
+            .logo {
+                margin-top: 0.5em;
+                display: flex;
+                align-items: center;
+                justify-content: center}
+            .logo img {
+                height: 1.5em;
+                margin: 0 0.5em 0 0}
+            li > span {
+                font-weight: 600}</style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <section>
+                        <h2>Edición dixital sen estrés tecnolóxico: das fontes á web</h2>
+                        <p>
+                            <strong>Helena Bermúdez Sabel</strong>
+                        </p>
+                        <p>Head of Digital Editions, Jinntec</p>
+                    </section>
+                    <section>
+                        <h2>Contidos</h2>
+                        <ul>
+                            <li>Fluxos de traballo automatizados</li>
+                            <li>Introdución a XML e TEI</li>
+                            <li>Introdución a TEI Publisher</li>
+                            <li>Exercicio práctico</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Información preliminar</h2>
+                        <ul>
+                            <li>Guía da sesión: <a
+                                    href="https://helenasabel.github.io/obradoiro.html"
+                                    target="_blank"
+                                >https://helenasabel.github.io/obradoiro.html</a></li>
+                        </ul>
+                    </section>
+                </section>
+                <!--  <section>
+                    <section>
+                        <h2>A ﬁloloxía computacional e a edición</h2>
+                        <ul>
+                            <li><strong>Evolución</strong>: a tecnoloxía deixa de ser unha
+                                ferramenta auxiliar na busca de metodoloxías máis convenientes para
+                                converterse nun elemento “íntrinseco” á propia edición que permite
+                                unha nova exploración e explotación dos textos.</li>
+                            <li><strong>Terminoloxía</strong>: <em>edición dixital</em>, <em>edición
+                                ﬁlolóxica dixital</em>, <em>edición dixital académica</em>,
+                                <em>edición académica dixital</em>...</li>
+                            <li><strong>Deﬁnición</strong>: unha edición ﬁlolóxica dixital é unha
+                                representación interpretativa de documentos históricos que implica a
+                                combinación de substitutos das fontes primarias, o texto editado (ou
+                                textos) e as ferramentas para explotalos.</li>
+                        </ul>
+                    </section>
+                </section>-->
+                <section>
+                    <section>
+                        <h1>Fluxos de traballo automatizados</h1>
+                    </section>
+                    <section>
+                        <h2>Transcrición automática</h2>
+                        <ul>
+                            <li>De imaxes a textos electrónicos (anotados)</li>
+                            <li>Ferramentas OCR e HTR. Algúns exemplos: <ul><li>Extensións dos
+                                        navegadores: <ul><li><a
+                                                  href="https://mybrowseraddon.com/image-reader.html"
+                                                  target="_blank">Image Reader OCR</a>, <a
+                                                  target="_blank"
+                                                  href="https://ocr.space/copyfish/docs"
+                                                >Copyﬁsh</a></li></ul></li>
+                                    <li>Móbil: <ul><li>
+                                                <a target="_blank" href="https://keep.google.com/"
+                                                  >Google Keep</a></li></ul></li>
+                                    <li>PC: <ul><li><a target="_blank"
+                                                  href="https://github.com/tesseract-ocr/tesseract"
+                                                  >Tesseract</a>, <a target="_blank"
+                                                  href="https://github.com/UB-Mannheim/zotero-ocr"
+                                                  >Zotero OCR</a>, <a target="_blank"
+                                                  href="https://readcoop.eu/transkribus/"
+                                                  >Transkribus</a></li>
+                                            <li>Editores de PDF con tecnoloxía OCR: <a
+                                                  target="_blank"
+                                                  href="https://www.adobe.com/acrobat.html">Adobe
+                                                  Acrobat</a>, <a target="_blank"
+                                                  href="https://pdf.wondershare.net/fr/ad/pdf-editor/ocr.html"
+                                                  >Wondershare PDFelement Pro</a></li></ul></li>
+                                    <li>Plataformas web: <ul><li><a target="_blank"
+                                                  href="https://www.bing.com/visualsearch/Microsoft/TextRecognition"
+                                                  >Windows: Text Recognition</a>, <a target="_blank"
+                                                  href="https://www.sodapdf.com/fr/ocr-pdf/">Soda
+                                                  PDF</a>, <a target="_blank"
+                                                  href="https://docsumo.com/free-tools/online-ocr-scanner"
+                                                  >Docsumo</a>, <a target="_blank"
+                                                  href="https://support.google.com/drive/answer/176692"
+                                                  >Google Drive</a>, <a target="_blank"
+                                                  href="https://transkribus.ai/"
+                                                >Transkribus.ai</a></li></ul></li></ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Transcrición automática</h2>
+                        <ul>
+                            <li>Dispoñibilidade de modelos pre-adestrados e algoritmos de
+                                adestramento fáciles de usar</li>
+                            <li>Conversión de arquivos en formatos de transcrición a arquivos
+                                semanticamente anotados (XML-TEI) a través de: <ul>
+                                    <li>scripting (ex. <a target="_blank"
+                                            href="https://github.com/DiScholEd/pipeline-digital-scholarly-editions"
+                                            >DiScholEd</a>, <a target="_blank"
+                                            href="https://github.com/TEI4HTR/page2tei">LECTAUREP -
+                                            Page2tei</a>, Transkribus)</li>
+                                    <li>aprendizaxe automática (<em>machine learning</em>): <a
+                                            target="_blank" href="https://hal.science/hal-01508868"
+                                            >Khemakhem et al. (2017)</a>, <a target="_blank"
+                                            href="http://ceur-ws.org/Vol-2989/short_paper34.pdf"
+                                            >Pagel et al. (2021)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Colación automática</h2>
+                        <ul>
+                            <li>Colación: comparación das lecturas de dous ou máis testemuños</li>
+                            <li>As ferramientas de colación automátican reciben como entrada a
+                                transcripción de cada testemuño; estass transcicións aliñanse entre
+                                si mediante un algoritmo de aliñación.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Colación automática</h2>
+                        <ul>
+                            <li>Ferramentas: <ul><li><a target="_blank"
+                                            href="https://lera.uzi.uni-halle.de/">LERA - Locate,
+                                            Explore, Retrace and Apprehend complex text variants</a>
+                                    </li>
+                                    <li><a target="_blank"
+                                            href="https://github.com/cs6-uniwue/Variance-Viewer"
+                                            >Variance viewer</a></li>
+                                    <li>
+                                        <a target="_blank" href="https://collatex.net/"
+                                        >CollateX</a></li>
+                                    <li><a target="_blank"
+                                            href="https://github.com/HuygensING/hyper-collate"
+                                            >Hypercollate</a></li></ul></li>
+                            <li>Para saber máis: <ul><li><a target="_blank"
+                                            href="https://automaticcollationlausanne2020.github.io/"
+                                            >Obradoiro de introdución á colación automática (en
+                                            inglés)</a></li></ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Anotación automática</h2>
+                        <ul>
+                            <li>Ferramentas de procesamento da linguaxe. Tarefas máis habituais: <ul>
+                                    <li>Lematización, PoS tagging, descrición morfosintáctica</li>
+                                    <li> Recoñecemento e desambiguación de entidades nomeadas</li>
+                                    <li>Análise de sentimentos e emocións</li>
+                                    <li>Modelado de tópicos, extracción de palabras-chave</li>
+                                    <li>Anotación de elementos de versiﬁcación (rima,
+                                        encabalgamento, escansión)</li>
+                                    <li>Anotación de ﬁguras retóricas</li></ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Anotación textual</h2>
+                        <ul>
+                            <li>
+                                <a href="https://catma.de/" target="_blank">CATMA</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/Lucaterre/semanticat" target="_blank"
+                                    >Semanticat</a>
+                            </li>
+                            <li>
+                                <a href="https://www.tustep.uni-tuebingen.de" target="_blank"
+                                    >TUSTEP</a>
+                            </li>
+                            <li>Anotación crítica <ul>
+                                    <li>
+                                        <a href="https://cte.oeaw.ac.at/" target="_blank">Classical
+                                            Text Editor</a></li>
+                                    <li>
+                                        <a href="http://teicat.huma-num.fr/index.php"
+                                            target="_blank">TEI Critical Apparatus Toolbox</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Entornos virtuais de investigación</h2>
+                        <ul>
+                            <li>Sistemas en liña que facilitan a colaboración entre
+                                investigadoras/es. No contexto da edición, xeralmente inclúen
+                                ferramentas relacionadas co almacenamento de documentos e imaxes,
+                                anotación de imaxes e documentos, análise textual, visualización,
+                                etc.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Entornos de investigación virtuais, ferramentas para a publicación e
+                            explotación de corpus</p>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/TEIC/CETEIcean" target="_blank"
+                                    >CETEIcean</a>
+                            </li>
+                            <li>
+                                <a href="https://minicomp.github.io/ed/" target="_blank">Ed. A
+                                    Jekyll Theme for Minimal Editions</a>
+                            </li>
+                            <li>
+                                <a href="http://www.bbaw.de/telota/software/ediarum" target="_blank"
+                                    >Ediarium</a>
+                            </li>
+                            <li>
+                                <a href="https://www.elaborate.huygens.knaw.nl/login"
+                                    target="_blank">eLaborate</a>
+                            </li>
+                            <li>
+                                <a href="https://faircopyeditor.com/" target="_blank">FairCopy</a>
+                            </li>
+                            <li>
+                                <a href="https://leaf-writer.leaf-vre.org/" target="_blank"
+                                    >LEAF-Writer</a>
+                            </li>
+                            <li>
+                                <a href="https://teipublisher.com/index.html" target="_blank">TEI
+                                    Publisher</a>
+                            </li>
+                            <li>
+                                <a href="http://www.teitok.org/index.php?action=home"
+                                    target="_blank">TEITOK</a>
+                            </li>
+                            <li>
+                                <a href="http://teiviewer.org/" target="_blank">TEIViewer</a>
+                            </li>
+                            <li>
+                                <a href="https://textgrid.de/en/" target="_blank">TextGrid</a>
+                            </li>
+                            <li>
+                                <a href="https://textualcommunities.org/app" target="_blank">Textual
+                                    Communities</a>
+                            </li>
+                            <li>
+                                <a href="http://textometrie.ens-lyon.fr/?lang=en" target="_blank"
+                                    >TXM</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Introdución a XML e TEI</h1>
+                    </section>
+                    <section>
+                        <h2>Marcar implica…</h2>
+                        <p> … modelar a estrutura inherente dun texto e as súas propiedades
+                            semánticas a partir de:</p>
+                        <ul>
+                            <li>Xerarquías</li>
+                            <li>Estruturas ordenadas</li>
+                            <li>Linguaxe humana + linguaxe computacional</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/xml-tree.png" alt="árbore xml" />
+                    </section>
+                    <section>
+                        <h2>Tipos de marcado</h2>
+                        <ul>
+                            <li>Descritivo</li>
+                            <li>Presentación</li>
+                            <li>Procedural</li>
+                            <li>
+                                <strong>Multifacético</strong>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Que é XML?</h2>
+                        <ul>
+                            <li>Formato para o almacenamento e transmisión de datos </li>
+                            <li>Definido polo World Wide Web Consortium (W3C)</li>
+                            <li>Uso moi extenso</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/xml-ex.png" alt="exemplo xml" />
+                    </section>
+                    <section>
+                        <img src="images/xml-tree-2.png" alt="árbore xml" />
+                    </section>
+                    <section>
+                        <h2>Sintaxe XML </h2>
+                        <ul>
+                            <li>Elemento: <code>&lt;l> &lt;/l></code></li>
+                            <li> Attributo: &lt;l met="3" rhyme="a"></li>
+                            <li>Nós textuais: <code> &lt;l met="3" rhyme="a">Frutales&lt;/l> &lt;l
+                                    met="3" rhyme="b">cargados.&lt;/l> &lt;l met="3"
+                                    rhyme="b">Dorados&lt;/l> &lt;l met="3"
+                                    rhyme="a">trigales…&lt;/l> </code>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/xml-ex-2.png" alt="exemplo xml" />
+                    </section>
+                    <section>
+                        <img src="images/xml-ex-3.png" alt="exemplo xml" />
+                    </section>
+                    <section>
+                        <img src="images/xml-tree-3.png" alt="árbore xml" />
+                    </section>
+                    <section>
+                        <h2>Sintaxe XML</h2>
+                        <ul>
+                            <li>A árbore XML ten unha única raíz, é dicir, un único elemento que
+                                contén todos os demais elementos </li>
+                            <li>Todos os contidos están delimitados </li>
+                            <li> Non pode conter os caracteres <code>&amp;</code>, <code>&lt;</code>
+                                (substituír polas entidades correspondentes <code>&amp;amp;</code> e
+                                    <code>&amp;lt;</code>) </li>
+                            <li> Todos os elementos deben estar aniñados correctamente: sen
+                                solapamentos! </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <section>
+                            <h2> Por que XML?</h2>
+                            <ul>
+                                <li> Sintaxe fácil e simple</li>
+                                <li> Lexíbel</li>
+                                <li> Control da entrada e saída</li>
+                                <li> Software e hardware independentes</li>
+                                <li> Soportado por unha ampla gama de software (aberto +
+                                    propietario) </li>
+                            </ul>
+                        </section>
+                    </section>
+                    <section>
+                        <h2>XML e o modelado</h2>
+                        <ul>
+                            <li>Modelado dun texto como <strong>xerarquías ordenadas de obxectos de
+                                    contido</strong> (Renear et al. 1993) <ul>
+                                    <li> Limitación: coexistencia de múltiples xerarquías lóxicas (o
+                                        problema dos elementos superpostos) </li>
+                                    <li> Vantaxes do modelado:<ul>
+                                            <li> As prácticas analíticas determinan frecuentemente
+                                                xerarquías de obxectos (ou a descomposición en
+                                                xerarquías adoita ser posible) </li>
+                                            <li> Lexíbel para persoas e máquinas </li>
+                                            <li>Sintaxe fácil</li></ul></li></ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A familia de estándares XML</h2>
+                        <ul>
+                            <li>Linguaxes de esquema</li>
+                            <li>XPath</li>
+                            <li>XSLT</li>
+                            <li>XQuery</li>
+                            <li> SVG</li>
+                            <li>HTML</li>
+                            <li> KML</li>
+                            <li>XSL-FO, XForms, XProc, OOXML, OpenOffice.orgXML</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="images/flanders2018.png" />
+                            <figcaption>Flanders (2018)</figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <h2> Válido vs. ben formado</h2>
+                        <ul>
+                            <li>Ben formado: cumpre coas regras de XML </li>
+                            <li> Válido:<ul>
+                                    <li>Uso correcto do vocabulario: os elementos e atributos usados
+                                        están dispoñíbeis nesa lingua </li>
+                                    <li>Uso correcto da gramática: os elementos utilízanse no lugar
+                                        axeitado seguindo a orde definida </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2> TEI como estándar XML</h2>
+                        <ul>
+                            <li> Algunhas das vantaxes chave:<ul>
+                                    <li>Interoperabilidade</li>
+                                    <li>Intercambio</li>
+                                    <li>Transferencia tecnolóxica</li>
+                                    <li>Eficiencia</li></ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Que é a Text Encoding Initiative (TEI)</h2>
+                        <ul>
+                            <li>Conxunto de pautas para codificar documentos culturais </li>
+                            <li>Consorcio Internacional que mantén e desenvolve as devanditas
+                                directrices </li>
+                            <li>Comunidade de proxectos e investigadores/as que implementan as
+                                directrices da TEI </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <figure>
+                            <img src="images/flanders2018.png" />
+                            <figcaption>Flanders (2018)</figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <h2>Modelado en TEI </h2>
+                        <ul>
+                            <li>Definición do vocabulario </li>
+                            <li>Formalización das restricións </li>
+                            <li>Deseño do output (saída) </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>
+                            <a
+                                href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html"
+                                target="_blank">As directrices TEI</a>
+                        </h2>
+                        <ul>
+                            <li>Divididas en dúas partes <ul><li> Capítulos (comunmente denominadas
+                                        “prosa”)</li>
+                                    <li> Especificacións (<em>specs</em>)</li>
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2> Válido vs. ben formado</h2>
+                        <ul>
+                            <li>Ben formado: cumpre coas regras de XML </li>
+                            <li> Válido:<ul>
+                                    <li>Uso correcto do vocabulario: os elementos e atributos usados
+                                        están dispoñíbeis nesa lingua </li>
+                                    <li>Uso correcto da gramática: os elementos utilízanse no lugar
+                                        axeitado seguindo a orde definida </li>
+                                    <li>A validez garántese grazas á formalización dun esquema
+                                        nalgunha das linguaxes de esquema</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Linguaxes de esquema</h2>
+                        <ul>
+                            <li>W3C XML Schema (XML Schema or XSD)</li>
+                            <li> Document Type Definition (DTD)</li>
+                            <li> REgular LAnguage for XML Next Generation (<strong>RELAX
+                                NG</strong>) <ul>
+                                    <li>sintaxe XML</li>
+                                    <li> sintaxe compacta</li></ul></li>
+                            <li>
+                                <strong>Schematron</strong>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><strong>TEI ODD</strong>: un formato de especificación conforme á
+                                TEI-XML que permite customizar o vocabulario TEI dunha maneira que
+                                responde á <strong>programación letrada</strong>. </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>TEI ODD: One Document Does it All</h2>
+                        <ul>
+                            <li>Seleccionar módulos</li>
+                            <li>Eliminar elementos innecesarios</li>
+                            <li>Engadir novos elementos e/ou atributos</li>
+                            <li>Cambiar o nome dun elemento ou atributo</li>
+                            <li> Limitar os valores dun atributo</li>
+                            <li> Limitar a estrutura</li>
+                            <li> Manipular agrupacións funcionais de elementos </li>
+                            <li>Internacionalización (i-18n)</li>
+                            <li>Documentación</li>
+                            <li>Definir a saída a partir do <strong>modelo de procesamento de
+                                    TEI</strong></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Por que TEI Publisher?</h1>
+                    </section>
+                    <section>
+                        <h2>TEI Publisher</h2>
+                        <ul>
+                            <li>Software libre de código aberto</li>
+                            <li>Basado en estándares abertos, con opcións por defecto que facilitan
+                                a anotación e publicación sen necesidade de programar</li>
+                            <li>Comunidade: <a href="https://www.e-editiones.org/" target="_blank"
+                                    >e-editiones</a> (organización de base co obxectivo de sustentar
+                                edicións a partir da promoción de estándares abertos e colaboración
+                                comunitaria)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Demo</h2>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Exercicio práctico</h1>
+                        <h2>Edición de <em>Contos da miña terra</em></h2>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/pointer/pointer.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+                
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins:[RevealMarkdown, RevealHighlight, RevealPointer, RevealNotes], slideNumber: 'c'
+            });</script>
+    </body>
+</html>
